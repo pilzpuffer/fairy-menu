@@ -30,52 +30,43 @@ let menuDisplay = function() {
 
     content.appendChild(menuBlock);
 
+    let setUpItem = function(title, ingredients) {
+        let item = document.createElement("div");
+        item.classList.add("item");
+        
+        let itemTitle = document.createElement("div");
+        itemTitle.classList.add("title");
+        itemTitle.textContent = title.toUpperCase();
+
+        let itemDescription = document.createElement("div");
+        itemDescription.classList.add("description");
+        itemDescription.textContent = ingredients;
+        itemDescription.style.display = "none";
+
+        item.addEventListener("click", function() {
+            let desc = this.lastChild;
+            if (desc.style.display !== "none") {
+                
+                item.style.gridTemplateRows = "4rem 0rem";
+                setTimeout(function() {desc.style.display = "none";}, 150);
+            } else {
+                
+                item.style.gridTemplateRows = "4rem 1.3rem";
+                setTimeout(function() {desc.style.display = "inline";}, 150);
+            }
+
+        })
+        
+        item.appendChild(itemTitle);
+        item.appendChild(itemDescription);
+
+        content.appendChild(item);
+    }
+
     let drinksMenu = function() {
-        let setUpDrink = function(title, ingredients) {
-            let drinkItem = document.createElement("div");
-            drinkItem.classList.add("item");
-            
-            let drinkTitle = document.createElement("div");
-            drinkTitle.classList.add("title");
-            drinkTitle.textContent = title.toUpperCase();
-
-            let drinkDescription = document.createElement("div");
-            drinkDescription.classList.add("description");
-            drinkDescription.textContent = ingredients;
-            drinkDescription.style.display = "none";
-
-            drinkTitle.addEventListener("click", function() {
-                let content = this.nextElementSibling;
-                let parent = this.parentElement;
-                if (content.style.display !== "none") {
-                    
-                    parent.style.gridTemplateRows = "4rem 0rem";
-                    setTimeout(function() {content.style.display = "none";}, 150);
-                } else {
-                    
-                    parent.style.gridTemplateRows = "4rem 1.3rem";
-                    setTimeout(function() {content.style.display = "inline";}, 150);
-                }
-
-            })
-            
-            drinkItem.appendChild(drinkTitle);
-            drinkItem.appendChild(drinkDescription);
-
-            content.appendChild(drinkItem);
-        }
-
-        let normalDrinks = function() {
-            setUpDrink("prosecco blood shot", "Prosecco, Aperol, grenadine");
-            setUpDrink("vampire's kiss", "Vodka, grenadine, cranberry juice, Prosecco");
-            setUpDrink("ruby flash", "Aperol, cranberry juice, tonic water");
-            setUpDrink("bloody mary", "Vodka, tomato juice, spices");
-            setUpDrink("graveyard rose", "Pink gin, pomegranate juice, tonic water" );
-            setUpDrink("black daiquiri", "Rum, lemon, simple syrup");
-            setUpDrink("moonlight bite", "Rum, mint, lime, grenadine");
-        }
-
-        normalDrinks();
+        setUpItem("prosecco blood shot", "Prosecco, Aperol, grenadine");
+        setUpItem("vampire's kiss", "Vodka, grenadine, cranberry juice, Prosecco");
+        setUpItem("ruby flash", "Aperol, cranberry juice, tonic water");
     }
 
     let foodMenu = function() {
@@ -100,9 +91,9 @@ let menuDisplay = function() {
         }
 
         let normalFood = function() {
-            setUpDish("appetizers", ["Roasted beet carpaccio with whipped goat cheese", "Prosciutto-wrapped figs with balsamic glaze", "Mini tartlets with caramelized onions and brie", "Mushroom vol-au-vents"]);
-            setUpDish("entrees", ["Eggplant roulade with ricotta and tomato confit", "Red wine braised beef with rosemary potatoes", "Seared duck breast with cherry sauce", "Dark cherry chicken salad with goat cheese", "Truffle cream fettuccine with wild mushrooms"]);
-            setUpDish("desserts", ["Black Forest gâteau", "Red Velvet cheesecake", "Dark chocolate raspberry torte", "Cherry mascarpone tart"]);
+            setUpDish("appetizers", ["Roasted beet carpaccio", "Prosciutto-wrapped figs"]);
+            setUpDish("entrees", ["Eggplant roulade with ricotta", "Red wine braised beef", "Seared duck breast"]);
+            setUpDish("desserts", ["Black Forest gâteau", "Red Velvet cheesecake"]);
         }
         
         normalFood();
