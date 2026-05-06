@@ -4,6 +4,8 @@ import fangsIcon from "./assets/img/fangs.svg";
 let menuDisplay = function() {
     let content = document.querySelector("#content");
 
+    let places;
+
     let menuBlock = document.createElement("nav");
     menuBlock.classList.add("menu-nav");
     
@@ -30,7 +32,7 @@ let menuDisplay = function() {
 
     content.appendChild(menuBlock);
 
-    let setUpItem = function(title, ingredients) {
+    let setUpItem = function(place, title, ingredients) {
         let item = document.createElement("div");
         item.classList.add("item");
         
@@ -60,43 +62,40 @@ let menuDisplay = function() {
         item.appendChild(itemTitle);
         item.appendChild(itemDescription);
 
-        content.appendChild(item);
+        places[`${place}`].appendChild(item);
     }
 
     let drinksMenu = function() {
-        setUpItem("prosecco blood shot", "Prosecco, Aperol, grenadine");
-        setUpItem("vampire's kiss", "Vodka, grenadine, cranberry juice, Prosecco");
-        setUpItem("ruby flash", "Aperol, cranberry juice, tonic water");
+        places = {
+            contentNode: content,
+        }
+
+        setUpItem("contentNode", "prosecco blood shot", "Prosecco, Aperol, grenadine");
+        setUpItem("contentNode", "vampire's kiss", "Vodka, grenadine, cranberry juice, Prosecco");
+        setUpItem("contentNode", "ruby flash", "Aperol, cranberry juice, tonic water");
     }
 
     let foodMenu = function() {
-        let setUpDish = function(category, [...dishes]) {
-            let foodSection = document.createElement("div");
-            foodSection.classList.add("item");
-            
-            let foodCategory = document.createElement("div");
-            foodCategory.classList.add("title");
-            foodCategory.textContent = category.toUpperCase();
 
-            foodSection.appendChild(foodCategory);
+        let appetizers = document.createElement("div");
+        appetizers.textContent = "appetizers";
+        let entrees = document.createElement("div");
+        entrees.textContent = "entrees";
+        let desserts = document.createElement("div");
+        desserts.textContent = "desserts";
 
-            [...dishes].forEach((foodItem) => {
-                let foodList = document.createElement("div");
-                foodList.classList.add("description");
-                foodList.textContent = foodItem;
-                foodSection.appendChild(foodList);
-            })        
-            
-            content.appendChild(foodSection);
-        }
+        places = {
+            appNode: appetizers,
+            entNode: entrees,
+            desNode: desserts
+        };
 
-        let normalFood = function() {
-            setUpDish("appetizers", ["Roasted beet carpaccio", "Prosciutto-wrapped figs"]);
-            setUpDish("entrees", ["Eggplant roulade with ricotta", "Red wine braised beef", "Seared duck breast"]);
-            setUpDish("desserts", ["Black Forest gâteau", "Red Velvet cheesecake"]);
-        }
-        
-        normalFood();
+        setUpItem("appNode", "dishName", "something? maybe?");
+        setUpItem("desNode", "dishName", "something sweet!");
+
+        content.append(appetizers, entrees, desserts);
+
+
     }
 
     let menuOptions = {
