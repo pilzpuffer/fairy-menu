@@ -1,0 +1,376 @@
+@font-face {
+    font-family: "Cinzel Decorative";
+    src: 
+        url("./assets/fonts/CinzelDecorative-Black.woff2") format("woff2"),
+        url("./assets/fonts/CinzelDecorative-Black.woff") format("woff");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Cinzel Decorative";
+    src: 
+        url("./assets/fonts/CinzelDecorative-Bold.woff2") format("woff2"),
+        url("./assets/fonts/CinzelDecorative-Bold.woff") format("woff");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Cinzel Decorative";
+    src: 
+        url("./assets/fonts/CinzelDecorative-Regular.woff2") format("woff2"),
+        url("./assets/fonts/CinzelDecorative-Regular.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Noto Serif";
+    src: 
+        url("./assets/fonts/NotoSerifDisplay-Regular.woff2") format("woff2"),
+        url("./assets/fonts/NotoSerifDisplay-Regular.woff") format("woff");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Noto Serif";
+    src: 
+        url("./assets/fonts/NotoSerifDisplay-Italic.woff2") format("woff2"),
+        url("./assets/fonts/NotoSerifDisplay-Italic.woff") format("woff");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Tan";
+    src: 
+        url("./assets/fonts/TAN.woff2") format("woff2"),
+        url("./assets/fonts/TAN.woff") format("woff");
+}
+
+:root {
+    --blood: rgba(122, 0, 0);
+    --ash: rgba(97, 97, 97);
+    --bone: rgb(255, 255, 255);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+    min-height: 100%;
+}
+
+body, html {
+    min-height: -webkit-fill-available;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--ash);
+    
+    overflow-x: hidden;
+    overflow-y: visible;
+    min-height: 100vh;
+    height: 100%;
+    /* min-width: 960px; */
+    
+    color: var(--bone);
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+nav, #content {
+    margin: auto;
+    width: 60%; /* use clamp later, find good width */
+    background-color: var(--blood);
+}
+
+.main-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 4.5rem 6rem;
+    gap: 2rem;
+    place-content: center;
+
+    padding: 0.5rem clamp(1.5rem, 3vw, 5%) 2rem;
+
+    font-family: "Cinzel Decorative";
+    font-weight: bold;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+
+    border-bottom: 1px solid var(--blood);
+}
+
+.main-nav > button {
+    background: none;
+}
+
+.main-nav > div, .main-nav > button {
+    z-index: 2;
+}
+
+nav > button {
+    background-color: var(--blood);
+    border: none;
+
+    color: var(--bone);
+}
+
+#content {
+    min-height: calc(100vh - 14.72rem);
+    padding-bottom: 2rem;
+    margin-top: -5px;
+}
+
+#center-title {
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    place-self: center;
+
+    color: var(--bone);
+    font-size: clamp(4rem, 7vw, 6rem);
+
+    pointer-events: none;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.home-text, .contact-text {
+    display: grid;
+    place-items: center;
+    grid-template-rows: repeat(5, 1fr);
+
+    width: 60%;
+    margin: auto;
+}
+
+.home-text > div,
+.contact-text > div {
+    font-size: 1.3rem;
+    font-family: "Noto Serif";
+    text-align: center;
+    z-index: 2;
+}
+
+.contact-text  {
+    grid-template-rows: repeat(10, 1fr);
+}
+
+.contact-text .contact-title {
+    align-self: end;
+}
+
+.contact-title {
+    font-size: 1.8rem !important; 
+}
+
+.rules {
+    display: grid;
+    grid-template-columns: 0.25fr 3fr;
+    place-items: center;
+    gap: 0.5rem;
+}
+
+.rules img {
+    height: 1.3rem;
+    filter: invert(1);
+
+    grid-column-start: 1;
+    grid-row: 1;
+}
+
+.phone {
+    align-self: start;
+}
+
+.menu-nav {
+    font-family: "Tan";
+    font-size: clamp(1.3rem, 2vw, 2rem);
+
+    margin: auto;
+    padding: 2rem 0;
+    width: 80%;
+
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.menu-nav > button, .menu-nav {
+    display: grid;
+    place-items: center;
+}
+
+.menu-nav > button {
+    grid-template-columns: 2fr 1fr;
+    background: none;
+    z-index: 2;
+}
+
+.menu-nav > button:first-child {
+    grid-template-columns: 1fr 2fr;
+}
+
+button > img {
+    width: 2.5em;
+    filter: invert(1);
+}
+
+.menu-nav > button > img {
+    height: 1.65em;
+}
+
+.menu-nav > button:first-child > img {
+    grid-row: 1;
+    height: 1.5em;
+}
+
+.droplet {
+    position: absolute;
+    transform: scale(0.6);
+    margin-left: -3.1em;
+    margin-top: -1em;
+}
+
+.item {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    place-items: center;
+}
+
+.item + .item {
+    margin-top: 2rem;
+}
+
+.title, .description {
+    z-index: 2;
+}
+
+.title {
+    font-family: "Tan";
+    font-weight: bold;
+    font-size: 1.8rem;
+    align-self: end;
+}
+
+.description {
+    font-family: "Noto Serif";
+    font-style: italic;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.bat {
+    height: 3em;
+    position: absolute;
+    pointer-events: none;
+}
+
+.wisp {
+    filter: opacity(25%)
+}
+
+.ghost {
+    filter: opacity(50%);
+}
+
+.ghoul {
+    filter: opacity(75%)
+}
+
+.tipsy {
+   transform: rotate(10deg);
+}
+
+.boozy {
+    transform: rotate(20deg);
+}
+
+.drunk {
+    transform: rotate(30deg);
+}
+
+.confused {
+    transform: rotate(-10deg);
+}
+
+.disoriented {
+    transform: rotate(-20deg);
+}
+
+.lost {
+    transform: rotate(-30deg);
+}
+
+.jump {
+    margin-top: -1em;
+}
+
+.fly {
+    margin-top: -2em;
+}
+
+.dig {
+    margin-top: 1em;
+}
+
+.tunnel {
+    margin-top: 2em;
+}
+
+.shuffleL {
+    margin-left: -2em;
+}
+
+.shuffleR {
+    margin-left: 2em;
+}
+
+.slideL {
+    margin-left: -3em;
+}
+
+.slideR {
+    margin-left: 3em;
+}
+
+.mirror {
+    transform: scaleX(-1);
+}
+
+.fairy {
+    transform: scale(0.25)
+}
+
+.dwarf {
+    transform: scale(0.75)
+}
+
+.giant {
+    transform: scale(1.25)
+}
+
+.goliath {
+    transform: scale(2)
+}
