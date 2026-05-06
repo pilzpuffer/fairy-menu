@@ -255,8 +255,9 @@ button > img {
 
 .item {
     display: grid;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 4rem 0rem;
     place-items: center;
+    transition: all 0.5s ease-out;
 }
 
 .item + .item {
@@ -277,9 +278,24 @@ button > img {
 .description {
     font-family: "Noto Serif";
     font-style: italic;
-    font-size: 1.3rem;
     text-align: center;
+    transition: all 0.3s ease-in;
 }
+
+/* .rollOutText {
+    animation: 1s linear rollOut;
+}
+
+@keyframes rollOut {
+    0% {
+       height: 0%; 
+       visibility: visible;
+    }
+
+    100% {
+       height: 100%;  
+    }
+} */
 
 .bat {
     height: 3em;

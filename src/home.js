@@ -11,11 +11,9 @@ let homeDisplay = function() {
         homeBlock.appendChild(newLine);
     }
 
-    addLine("Come in, dear guest, and be welcome.");
-    addLine("We serve those who wander after dusk - and those who find themselves a little lost.");
-    addLine("At The Last Drop, we take pride in every detail, from the first sip to the final bite, best savored long after sunset.");
-    addLine("Stay as long as you like. There’s no need to rush the night.");
-    addLine("Step in, and take a bite.");
+    addLine("This is a home page.");
+    addLine("second line of home page?");
+    addLine("go check out the menu!");
 
     homeBlock.addEventListener("mouseover", function(event) {
         if (event.target === homeBlock.lastChild) {
