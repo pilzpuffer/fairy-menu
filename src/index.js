@@ -7,11 +7,11 @@ import { homeDisplay } from "./home.js";
 
 window.addEventListener("load", function() {
     let content = document.querySelector("#content");
-    batCloud();
+    // batCloud();
 
-    window.addEventListener("resize", function() {
-        batRenew();
-    })
+    // window.addEventListener("resize", function() {
+    //     batRenew();
+    // })
 
     let title = document.querySelector("#center-title");
 

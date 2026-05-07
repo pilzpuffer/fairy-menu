@@ -52,8 +52,10 @@
     radial-gradient(circle at 30% 85%, rgba(160, 180, 120, 0.4) 0 20%, transparent 50%),
     linear-gradient(180deg, #dce7c8 0%, #b8cf9e 50%, #d9cfa8 100%);
     --content-backer: rgb(254, 241, 209);
+    --border-color: rgb(160, 162, 122);
+    --font-color: rgb(192, 156, 120);
+    --darker-font: rgba(82, 57, 32);;
 
-    --cornsilk: ;
     --pale-amber: #D3DB7Cff;
     --dry-sage: #B8CAA4ff;
     --tea-green: #D4DDB5ff;
@@ -61,6 +63,7 @@
     --dry-sage-2: #C2C287ff;
     --sand: #A69756ff;
     --cornsilk-2: #FDF2D2ff;
+    --golden-chestnut: #C98751ff;
 }
 
 *, *::before, *::after {
@@ -84,7 +87,6 @@ body, html {
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    background-color: var(--ash);
     
     overflow-x: hidden;
     overflow-y: visible;
@@ -92,6 +94,7 @@ body {
     height: 100%;
     
     background: var(--background-backer);
+    color: var(--font-color);
 }
 
 input, button, textarea, select {
@@ -121,6 +124,8 @@ header {
     border-top-right-radius: 50%;
     border-bottom: 0;
     padding: 10rem clamp(1.5rem, 3vw, 5%) 1rem;
+
+    border: 2px solid var(--border-color);
 }
 
 .main-nav {
@@ -139,7 +144,7 @@ header {
 
 .main-nav > button {
     background: none;
-    margin-top: -5rem;
+    /* margin-top: -5rem; */
 }
 
 .main-nav > div, .main-nav > button {
@@ -149,8 +154,7 @@ header {
 nav > button {
     background-color: var(--content-backer);
     border: none;
-
-    color: var(--bone);
+    color: var(--font-color)
 }
 
 #content {
@@ -159,6 +163,8 @@ nav > button {
     margin-top: -1rem;;
 
     margin-bottom: 5rem;
+    border: 2px solid var(--border-color);
+    border-top: none;
 }
 
 #center-title {
@@ -167,11 +173,9 @@ nav > button {
     grid-column-end: 4;
     place-self: center;
 
-    color: var(--bone);
     font-size: clamp(4rem, 7vw, 6rem);
 
     pointer-events: none;
-    margin-top: -5rem;
 }
 
 .hidden {
@@ -279,6 +283,7 @@ button > img {
     grid-template-rows: 4rem 0rem;
     place-items: center;
     transition: all 0.5s ease-out;
+    color: var(--darker-font)
 }
 
 .item + .item {
@@ -395,4 +400,22 @@ button > img {
 
 .goliath {
     transform: scale(2)
+}
+
+@media screen and (max-width: 1200px) {
+    header, #content, .main-nav {
+        width: 70%
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header, #content, .main-nav {
+        width: 85%
+    }
+}
+
+@media screen and (max-width: 650px) {
+    header, #content, .main-nav {
+        width: 90%
+    }
 }
