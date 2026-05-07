@@ -43,7 +43,7 @@ let batCloud = function () {
 
         function placeBat() {
             let maxX = innerWidth;
-            let maxY = body.scrollHeight * 0.92;
+            let maxY = body.scrollHeight * 0.91;
             let x = Math.random() * maxX;
             let y = Math.random() * maxY;
 

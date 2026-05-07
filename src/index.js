@@ -6,7 +6,6 @@ import { contactDisplay } from "./contact.js";
 import { homeDisplay } from "./home.js";
 
 window.addEventListener("load", function() {
-
     let content = document.querySelector("#content");
     batCloud();
 
