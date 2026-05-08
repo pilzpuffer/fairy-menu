@@ -125,7 +125,6 @@ header {
 
 .main-nav > button {
     background: none;
-    /* margin-top: -5rem; */
 }
 
 .main-nav > div, .main-nav > button {
@@ -133,7 +132,6 @@ header {
 }
 
 nav > button {
-    background-color: var(--content-backer);
     border: none;
     color: var(--font-color)
 }
@@ -268,7 +266,7 @@ button > img {
 }
 
 .item + .item {
-    margin-top: 2rem;
+    margin-top: 1.3rem;
 }
 
 .title, .description, .title-category {
@@ -293,12 +291,14 @@ button > img {
     font-style: italic;
     font-size: 1.8rem;
     align-self: end;
+    text-align: center;
 }
 
 .description {
     font-family: "Cormorant Garamond";
     font-style: italic;
     text-align: center;
+    font-size: 1.3rem;
     transition: all 0.3s ease-in;
 }
 
@@ -408,8 +408,20 @@ button > img {
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 675px) {
     header, #content, .main-nav {
         width: 90%
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .description {
+        padding-top: 1rem;
+    } 
+}
+
+@media screen and (max-width: 430px) {
+    .item.title-category + .item {
+        margin-top: 4.3rem;
     }
 }

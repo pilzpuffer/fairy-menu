@@ -61,7 +61,7 @@ let menuDisplay = function() {
                     setTimeout(function() {desc.style.display = "none";}, 150);
                 } else {
                     
-                    item.style.gridTemplateRows = "4rem 1.3rem";
+                    item.style.gridTemplateRows = "4rem 3rem";
                     setTimeout(function() {desc.style.display = "inline";}, 150);
                 }
             }
@@ -98,11 +98,20 @@ let menuDisplay = function() {
         };
 
         setUpItem("appNode", "appetizers", "");
-        setUpItem("appNode", "dishName", "something? maybe?");
+        setUpItem("appNode", "Summer Nectar Tartlets", "Курка, нектарин, авокадо, салатне листя, червона цибуля, кунжут");
+        setUpItem("appNode", "Fairy Garden Eggs", "Ніжна жовткова начинка, гірчиця, зелень, їстівні квіти");
+        setUpItem("appNode", "Wildflower Rolls", "Креветки, крабові палички, огірок, морква, болгарський перець, зелень");
+        setUpItem("appNode", "Salmon Meadow", "Слабосолений лосось, крем-сир, каперси, зелень");
+        setUpItem("appNode", "Forest Hummus", "Нут, тахіні, лимон, оливкова олія");
+        setUpItem("appNode", "Emerald Salmon Salad", "Слабосолений лосось, огірок, редис, маслини, салатний мікс, мікрогрін");
+        setUpItem("appNode", "Fairy Swords", "Асорті шпажок від шефа");
         setUpItem("entNode", "entrees", "");
-        setUpItem("entNode", "entrees", "this is a main dish!");
+        setUpItem("entNode", "Creamy Cottage Potatoes", "Вершкова картопля, бекон, карамелізована цибуля, сир, зелень");
+        setUpItem("entNode", "Golden Fried Chicken", "Смажене куряче стегно, фірмові соуси");
         setUpItem("desNode", "desserts", "");
-        setUpItem("desNode", "dishName", "something sweet!");
+        setUpItem("desNode", "Honey Pear Puff", "Камамбер, груша, мед, листкове тісто, горіхи");
+        setUpItem("desNode", "Flowery Marshmallows", "Авторський яблучний зефір");
+        setUpItem("desNode", "Celebration Cake", "Торт");
 
         content.append(appetizers, entrees, desserts);
 
