@@ -100,7 +100,7 @@ nav, #content, header {
 }
 
 header {
-    margin-top: 5rem;
+    margin-top: 2.3rem;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
     border-bottom: 0;
@@ -238,24 +238,22 @@ nav > button {
 
 button > img {
     width: 2.5em;
-    filter: invert(1);
 }
 
 .menu-nav > button > img {
     height: 1.65em;
 }
 
-.menu-nav > button:first-child > img {
-    grid-row: 1;
-    height: 1.5em;
+.menu-nav > button:first-child {
+    gap: 1rem;
 }
 
-.droplet {
-    position: absolute;
-    transform: scale(0.6);
-    margin-left: -3.1em;
-    margin-top: -1em;
+.menu-nav > button:first-child > img {
+    grid-row: 1;
+    height: 10rem;
+    width: auto;
 }
+
 
 .item {
     display: grid;

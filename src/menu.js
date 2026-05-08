@@ -1,5 +1,10 @@
-import bloodIcon from "./assets/img/blood.svg";
-import fangsIcon from "./assets/img/fangs.svg";
+import drinkIcon from "./assets/img/drink.svg"
+import macaronIcon from "./assets/img/macaron.svg";
+
+
+// import teapotIcon from "./assets/img/teapot.svg";
+// import cupIcon from "./assets/img/cup.svg"
+// import cocktailIcon from "./assets/img/cocktail.svg";
 
 let menuDisplay = function() {
     let content = document.querySelector("#content");
@@ -8,29 +13,41 @@ let menuDisplay = function() {
 
     let menuBlock = document.createElement("nav");
     menuBlock.classList.add("menu-nav");
-    
-    let bloodButton = document.createElement("button");
-    bloodButton.textContent = "drinks";
-    bloodButton.id = "blood";
-    let bloodImage = document.createElement("img");
-    let secondDrop = document.createElement("img");
-    secondDrop.classList.add("droplet");
-    bloodImage.src = bloodIcon;
-    secondDrop.src = bloodIcon;
-    bloodButton.append(bloodImage);
-    bloodButton.append(secondDrop);
 
-    let fleshButton = document.createElement("button");
-    let fleshImage = document.createElement("img");
-    fleshImage.src = fangsIcon;
-    fleshButton.textContent = "food";
-    fleshButton.append(fleshImage);
-    fleshButton.id = "flesh";
+    let drinksButton = document.createElement("button");
+    let drinkImage = document.createElement("img");
+    drinkImage.src = drinkIcon;
+    drinksButton.textContent = "drinks";
+    drinksButton.append(drinkImage);
+    drinksButton.id = "drinks";
+
+    let foodButton = document.createElement("button");
+    foodButton.textContent = "food";
+    foodButton.id = "food";
+    let foodImage = document.createElement("img");
+    foodImage.src = macaronIcon;
+    foodButton.append(foodImage);
     
-    menuBlock.appendChild(bloodButton);
-    menuBlock.appendChild(fleshButton);
+    menuBlock.appendChild(drinksButton);
+    menuBlock.appendChild(foodButton);
 
     content.appendChild(menuBlock);
+
+    drinksButton.addEventListener("mouseover", function() {
+        drinkImage.style.transform = "rotate(20deg)";
+    })
+
+    drinksButton.addEventListener("mouseout", function() {
+        drinkImage.style.transform = "";
+    })
+
+    foodButton.addEventListener("mouseover", function() {
+        foodImage.style.transform = "rotate(-20deg)";
+    })
+
+    foodButton.addEventListener("mouseout", function() {
+        foodImage.style.transform = "";
+    })
 
     let setUpItem = function(place, title, ingredients) {
         let item = document.createElement("div");
