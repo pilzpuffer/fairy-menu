@@ -58,14 +58,14 @@ let menuDisplay = function() {
             item.classList.add("title-category");
             itemTitle.textContent = title; 
         } else {
-            itemTitle.textContent = title.toUpperCase();
+            itemTitle.textContent = title;
             itemTitle.classList.add("title");
         }
         
 
         let itemDescription = document.createElement("div");
         itemDescription.classList.add("description");
-        itemDescription.textContent = ingredients;
+        itemDescription.textContent = ingredients.toLowerCase();
         itemDescription.style.display = "none";
 
         item.addEventListener("click", function() {
@@ -136,8 +136,8 @@ let menuDisplay = function() {
     }
 
     let menuOptions = {
-        blood: drinksMenu,
-        flesh: foodMenu
+        drinks: drinksMenu,
+        food: foodMenu
     }
 
     let menuViews = document.querySelectorAll(".menu-nav > button");

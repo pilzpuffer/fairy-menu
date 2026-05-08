@@ -1,5 +1,3 @@
-import bloodIcon from "./assets/img/blood.svg";
-
 let contactDisplay = function() {
 
     let content = document.querySelector("#content");

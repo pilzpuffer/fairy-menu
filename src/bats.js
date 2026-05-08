@@ -1,4 +1,6 @@
 import batImage from "./assets/img/bat.svg";
+import flowerImage from "./assets/img/flower.svg";
+import leafImage from "./assets/img/leaf.svg";
 
 function debounce(func, wait, immediate) {
 	let timeout;
@@ -34,11 +36,11 @@ let batCloud = function () {
                         ["fairy", "dwarf", "giant", "goliath"]
                     ];
 
-    for (let n = 0; n < 42; n++) {
+    for (let n = 0; n < 20; n++) {
         let body = document.querySelector("body");
 
         let bat = document.createElement("img");
-        bat.src = batImage;
+        bat.src = Math.random() > 0.49 ? flowerImage : leafImage;
         bat.classList.add("bat");
 
         function placeBat() {
