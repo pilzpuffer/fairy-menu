@@ -1,16 +1,16 @@
 import "./style.css";
 
-import { batCloud, batRenew } from "./bats.js";
+import { flowerStorm, replant } from "./flowers.js";
 import { menuDisplay } from "./menu.js";
 import { contactDisplay } from "./contact.js";
 import { homeDisplay } from "./home.js";
 
 window.addEventListener("load", function() {
     let content = document.querySelector("#content");
-    batCloud();
+    flowerStorm();
 
     window.addEventListener("resize", function() {
-        batRenew();
+        replant();
     })
 
     let title = document.querySelector("#center-title");

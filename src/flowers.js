@@ -1,4 +1,3 @@
-import batImage from "./assets/img/bat.svg";
 import flowerImage from "./assets/img/flower.svg";
 import leafImage from "./assets/img/leaf.svg";
 
@@ -17,17 +16,17 @@ function debounce(func, wait, immediate) {
 	};
 };
 
-let batRenew = debounce(function() {
-    let allBats = document.querySelectorAll(".bat");
+let replant = debounce(function() {
+    let allFlowers = document.querySelectorAll(".plant");
     
-    allBats.forEach((bat) => {
-        bat.remove()
+    allFlowers.forEach((plant) => {
+        plant.remove()
     })
-    batCloud();
+    flowerStorm();
 }, 150);
 
-let batCloud = function () {
-    let batVariety =[
+let flowerStorm = function () {
+    let plantVariety =[
                         ["mirror"], 
                         ["shuffleL", "shuffleR", "slideL", "slideR"], 
                         ["jump", "fly", "dig", "tunnel"], 
@@ -39,24 +38,24 @@ let batCloud = function () {
     for (let n = 0; n < 20; n++) {
         let body = document.querySelector("body");
 
-        let bat = document.createElement("img");
-        bat.src = Math.random() > 0.49 ? flowerImage : leafImage;
-        bat.classList.add("bat");
+        let plant = document.createElement("img");
+        plant.src = Math.random() > 0.49 ? flowerImage : leafImage;
+        plant.classList.add("plant");
 
-        function placeBat() {
+        function planting() {
             let maxX = innerWidth;
             let maxY = body.scrollHeight * 0.91;
             let x = Math.random() * maxX;
             let y = Math.random() * maxY;
 
-            bat.style = `left: ${x}px; top: ${y}px;`;
-            body.appendChild(bat)
+            plant.style = `left: ${x}px; top: ${y}px;`;
+            body.appendChild(plant)
         }
 
         let categorySelect;
         let chance = Math.random();
         let selectVariant = function() {
-            categorySelect = batVariety[Math.floor(Math.random() * batVariety.length)];
+            categorySelect = plantVariety[Math.floor(Math.random() * plantVariety.length)];
             return categorySelect[Math.floor(Math.random() * categorySelect.length)];
         }
 
@@ -68,13 +67,13 @@ let batCloud = function () {
 
             while (newTrait.length < 2 && currTrait.length < 2 ) {
 
-                for ( let i = 0; i < batVariety.length; i++ ) {
-                    for ( let j = 0; j < batVariety[i].length; j++ ) {
-                        if ( batVariety[i][j] === bat.classList[1] ) {
+                for ( let i = 0; i < plantVariety.length; i++ ) {
+                    for ( let j = 0; j < plantVariety[i].length; j++ ) {
+                        if ( plantVariety[i][j] === plant.classList[1] ) {
                             currTrait = [i, j];
                         }
 
-                        if ( batVariety[i][j] === `${currentPick}` ) {
+                        if ( plantVariety[i][j] === `${currentPick}` ) {
                             newTrait = [i, j];
                         }
                     }
@@ -88,22 +87,22 @@ let batCloud = function () {
                         currentPick = selectVariant();
                         duplicatePrevent();
                     } else {
-                        bat.classList.add(`${currentPick}`);
+                        plant.classList.add(`${currentPick}`);
                     }
                 }
             }
         }   
         
         if ( chance > 0.4) {
-            bat.classList.add(currentPick);
+            plant.classList.add(currentPick);
         }
 
         if ( chance > 0.7) {
             duplicatePrevent();
         } 
 
-        placeBat();
+        planting();
     } 
 }
 
-export { batCloud, batRenew };
+export { flowerStorm, replant };

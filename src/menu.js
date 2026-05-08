@@ -1,11 +1,6 @@
 import drinkIcon from "./assets/img/drink.svg"
 import macaronIcon from "./assets/img/macaron.svg";
 
-
-// import teapotIcon from "./assets/img/teapot.svg";
-// import cupIcon from "./assets/img/cup.svg"
-// import cocktailIcon from "./assets/img/cocktail.svg";
-
 let menuDisplay = function() {
     let content = document.querySelector("#content");
 
@@ -17,12 +12,12 @@ let menuDisplay = function() {
     let drinksButton = document.createElement("button");
     let drinkImage = document.createElement("img");
     drinkImage.src = drinkIcon;
-    drinksButton.textContent = "drinks";
+    drinksButton.textContent = "Drinks";
     drinksButton.append(drinkImage);
     drinksButton.id = "drinks";
 
     let foodButton = document.createElement("button");
-    foodButton.textContent = "food";
+    foodButton.textContent = "Food";
     foodButton.id = "food";
     let foodImage = document.createElement("img");
     foodImage.src = macaronIcon;
@@ -54,11 +49,20 @@ let menuDisplay = function() {
         item.classList.add("item");
         
         let itemTitle = document.createElement("div");
-        if (!places[`${place}`].hasChildNodes() && ingredients === "") {
+        let formatTitle = function() {
+            let processedTitle = title.toLowerCase().split(" ");
+            for (let i = 0; i < processedTitle.length; i++) {
+                processedTitle[i] = processedTitle[i].charAt(0).toUpperCase() + processedTitle[i].substring(1);
+            }
+            return processedTitle.join(" ")
+        }
+        
+
+        if (ingredients === "") {
             item.classList.add("title-category");
-            itemTitle.textContent = title; 
+            itemTitle.textContent = formatTitle(); 
         } else {
-            itemTitle.textContent = title;
+            itemTitle.textContent = formatTitle();
             itemTitle.classList.add("title");
         }
         
@@ -93,13 +97,29 @@ let menuDisplay = function() {
     }
 
     let drinksMenu = function() {
-        places = {
-            contentNode: content,
-        }
+        let wine = document.createElement("div");
+        let rum = document.createElement("div");
+        let gin = document.createElement("div");
 
-        setUpItem("contentNode", "prosecco blood shot", "Prosecco, Aperol, grenadine");
-        setUpItem("contentNode", "vampire's kiss", "Vodka, grenadine, cranberry juice, Prosecco");
-        setUpItem("contentNode", "ruby flash", "Aperol, cranberry juice, tonic water");
+        places = {
+            wineNode: wine,
+            rumNode: rum,
+            ginNode: gin
+        };
+
+        setUpItem("wineNode", "wine", "");
+        setUpItem("wineNode", "Faerie Wine", "ігристе вино, Parfait Amour, бузиновий сироп");
+        setUpItem("wineNode", "Beltane Spark", "ігристе вино,  грушевий ром, лавандовий сироп");
+
+        setUpItem("rumNode", "rum", "");
+        setUpItem("rumNode", "Summer Court", "грушевий ром, сік, бузиновий сироп, лаймовий сік");
+        setUpItem("rumNode", "Lavender Moon", "грушевий ром, лавандовий сироп, лаймовий сік, газована вода");
+        
+        setUpItem("ginNode", "gin", "");
+        setUpItem("ginNode", "Fairy Ring", "джин, бузиновий сироп, лаймовий сік, тонік");
+        setUpItem("ginNode", "Wild Hunt", "джин, Parfait Amour, тонік, лаймовий сік");
+        
+        content.append(wine, rum, gin);
     }
 
     let foodMenu = function() {
@@ -122,17 +142,17 @@ let menuDisplay = function() {
         setUpItem("appNode", "Forest Hummus", "Нут, тахіні, лимон, оливкова олія");
         setUpItem("appNode", "Emerald Salmon Salad", "Слабосолений лосось, огірок, редис, маслини, салатний мікс, мікрогрін");
         setUpItem("appNode", "Fairy Swords", "Асорті шпажок від шефа");
+
         setUpItem("entNode", "entrees", "");
         setUpItem("entNode", "Creamy Cottage Potatoes", "Вершкова картопля, бекон, карамелізована цибуля, сир, зелень");
         setUpItem("entNode", "Golden Fried Chicken", "Смажене куряче стегно, фірмові соуси");
+
         setUpItem("desNode", "desserts", "");
         setUpItem("desNode", "Honey Pear Puff", "Камамбер, груша, мед, листкове тісто, горіхи");
         setUpItem("desNode", "Flowery Marshmallows", "Авторський яблучний зефір");
         setUpItem("desNode", "Celebration Cake", "Торт");
 
         content.append(appetizers, entrees, desserts);
-
-
     }
 
     let menuOptions = {

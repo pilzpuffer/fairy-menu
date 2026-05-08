@@ -227,13 +227,14 @@ nav > button {
 }
 
 .menu-nav > button {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 7rem 1fr;
+    gap: 1rem;
     background: none;
     z-index: 2;
 }
 
 .menu-nav > button:first-child {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 7rem;
 }
 
 button > img {
@@ -242,10 +243,6 @@ button > img {
 
 .menu-nav > button > img {
     height: 1.65em;
-}
-
-.menu-nav > button:first-child {
-    gap: 1rem;
 }
 
 .menu-nav > button:first-child > img {
@@ -300,7 +297,7 @@ button > img {
     transition: all 0.3s ease-in;
 }
 
-.bat {
+.plant {
     height: 3em;
     position: absolute;
     pointer-events: none;
