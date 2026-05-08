@@ -1,48 +1,29 @@
 @font-face {
-    font-family: "Cinzel Decorative";
-    src: 
-        url("./assets/fonts/CinzelDecorative-Black.woff2") format("woff2"),
-        url("./assets/fonts/CinzelDecorative-Black.woff") format("woff");
-    font-weight: 900;
-}
-
-@font-face {
-    font-family: "Cinzel Decorative";
-    src: 
-        url("./assets/fonts/CinzelDecorative-Bold.woff2") format("woff2"),
-        url("./assets/fonts/CinzelDecorative-Bold.woff") format("woff");
+    font-family: 'Corinthia';
+    src: url('./assets/fonts/Corinthia-Bold.woff2') format('woff2'),
+        url('./assets/fonts/Corinthia-Bold.woff') format('woff');
     font-weight: bold;
 }
 
 @font-face {
-    font-family: "Cinzel Decorative";
-    src: 
-        url("./assets/fonts/CinzelDecorative-Regular.woff2") format("woff2"),
-        url("./assets/fonts/CinzelDecorative-Regular.woff") format("woff");
+    font-family: 'Corinthia';
+    src: url('./assets/fonts/Corinthia-Regular.woff2') format('woff2'),
+        url('./assets/fonts/Corinthia-Regular.woff') format('woff');
     font-weight: normal;
 }
 
 @font-face {
-    font-family: "Noto Serif";
-    src: 
-        url("./assets/fonts/NotoSerifDisplay-Regular.woff2") format("woff2"),
-        url("./assets/fonts/NotoSerifDisplay-Regular.woff") format("woff");
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Noto Serif";
-    src: 
-        url("./assets/fonts/NotoSerifDisplay-Italic.woff2") format("woff2"),
-        url("./assets/fonts/NotoSerifDisplay-Italic.woff") format("woff");
+    font-family: 'Cormorant Garamond';
+    src: url('./assets/fonts/CormorantGaramond-LightItalic.woff2') format('woff2'),
+        url('./assets/fonts/CormorantGaramond-LightItalic.woff') format('woff');
     font-style: italic;
 }
 
 @font-face {
-    font-family: "Tan";
-    src: 
-        url("./assets/fonts/TAN.woff2") format("woff2"),
-        url("./assets/fonts/TAN.woff") format("woff");
+    font-family: 'Cormorant Garamond';
+    src: url('./assets/fonts/CormorantGaramond-Light.woff2') format('woff2'),
+        url('./assets/fonts/CormorantGaramond-Light.woff') format('woff');
+    font-style: normal;
 }
 
 :root {
@@ -135,7 +116,7 @@ header {
     gap: 2rem;
     place-content: center;
 
-    font-family: "Cinzel Decorative";
+    font-family: 'Cormorant Garamond';
     font-weight: bold;
     font-size: clamp(2.5rem, 4vw, 3.5rem);
 
@@ -194,7 +175,7 @@ nav > button {
 .home-text > div,
 .contact-text > div {
     font-size: 1.3rem;
-    font-family: "Noto Serif";
+    font-family: 'Cormorant Garamond';
     text-align: center;
     z-index: 2;
 }
@@ -231,8 +212,8 @@ nav > button {
 }
 
 .menu-nav {
-    font-family: "Tan";
-    font-size: clamp(1.3rem, 2vw, 2rem);
+    font-family: "Corinthia";
+    font-size: clamp(2.3rem, 4vw, 3rem); 
 
     margin: auto;
     padding: 2rem 0;
@@ -290,19 +271,32 @@ button > img {
     margin-top: 2rem;
 }
 
-.title, .description {
+.title, .description, .title-category {
     z-index: 2;
 }
 
+.title-category {
+    font-family: "Corinthia";
+    font-size: 3.7rem;
+    margin-bottom: -2.7rem;
+    margin-top: 2.7rem;
+    color: var(--font-color)
+}
+
+.menu-nav + div {
+    margin-top: -2.7rem;
+}
+
 .title {
-    font-family: "Tan";
+    font-family: "Cormorant Garamond";
     font-weight: bold;
+    font-style: italic;
     font-size: 1.8rem;
     align-self: end;
 }
 
 .description {
-    font-family: "Noto Serif";
+    font-family: "Cormorant Garamond";
     font-style: italic;
     text-align: center;
     transition: all 0.3s ease-in;

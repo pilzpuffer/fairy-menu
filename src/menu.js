@@ -10,7 +10,7 @@ let menuDisplay = function() {
     menuBlock.classList.add("menu-nav");
     
     let bloodButton = document.createElement("button");
-    bloodButton.textContent = "blood";
+    bloodButton.textContent = "drinks";
     bloodButton.id = "blood";
     let bloodImage = document.createElement("img");
     let secondDrop = document.createElement("img");
@@ -23,7 +23,7 @@ let menuDisplay = function() {
     let fleshButton = document.createElement("button");
     let fleshImage = document.createElement("img");
     fleshImage.src = fangsIcon;
-    fleshButton.textContent = "flesh";
+    fleshButton.textContent = "food";
     fleshButton.append(fleshImage);
     fleshButton.id = "flesh";
     
@@ -37,8 +37,14 @@ let menuDisplay = function() {
         item.classList.add("item");
         
         let itemTitle = document.createElement("div");
-        itemTitle.classList.add("title");
-        itemTitle.textContent = title.toUpperCase();
+        if (!places[`${place}`].hasChildNodes() && ingredients === "") {
+            item.classList.add("title-category");
+            itemTitle.textContent = title; 
+        } else {
+            itemTitle.textContent = title.toUpperCase();
+            itemTitle.classList.add("title");
+        }
+        
 
         let itemDescription = document.createElement("div");
         itemDescription.classList.add("description");
@@ -47,15 +53,19 @@ let menuDisplay = function() {
 
         item.addEventListener("click", function() {
             let desc = this.lastChild;
-            if (desc.style.display !== "none") {
-                
-                item.style.gridTemplateRows = "4rem 0rem";
-                setTimeout(function() {desc.style.display = "none";}, 150);
-            } else {
-                
-                item.style.gridTemplateRows = "4rem 1.3rem";
-                setTimeout(function() {desc.style.display = "inline";}, 150);
+
+            if (desc.textContent !== "") {   
+                if (desc.style.display !== "none") {
+                    
+                    item.style.gridTemplateRows = "4rem 0rem";
+                    setTimeout(function() {desc.style.display = "none";}, 150);
+                } else {
+                    
+                    item.style.gridTemplateRows = "4rem 1.3rem";
+                    setTimeout(function() {desc.style.display = "inline";}, 150);
+                }
             }
+            
 
         })
         
@@ -78,11 +88,8 @@ let menuDisplay = function() {
     let foodMenu = function() {
 
         let appetizers = document.createElement("div");
-        appetizers.textContent = "appetizers";
         let entrees = document.createElement("div");
-        entrees.textContent = "entrees";
         let desserts = document.createElement("div");
-        desserts.textContent = "desserts";
 
         places = {
             appNode: appetizers,
@@ -90,7 +97,11 @@ let menuDisplay = function() {
             desNode: desserts
         };
 
+        setUpItem("appNode", "appetizers", "");
         setUpItem("appNode", "dishName", "something? maybe?");
+        setUpItem("entNode", "entrees", "");
+        setUpItem("entNode", "entrees", "this is a main dish!");
+        setUpItem("desNode", "desserts", "");
         setUpItem("desNode", "dishName", "something sweet!");
 
         content.append(appetizers, entrees, desserts);
