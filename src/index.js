@@ -5,6 +5,8 @@ import { menuDisplay } from "./menu.js";
 import { contactDisplay } from "./contact.js";
 import { homeDisplay } from "./home.js";
 
+import flowerCrownImage from "./assets/img/flowerCrown.svg"
+
 window.addEventListener("load", function() {
     let content = document.querySelector("#content");
     flowerStorm();
@@ -14,6 +16,13 @@ window.addEventListener("load", function() {
     })
 
     let title = document.querySelector("#center-title");
+
+    let navigationSection = document.querySelector(".main-nav");
+    let flowerCrown = document.createElement("img");
+    flowerCrown.src = flowerCrownImage;
+    flowerCrown.id = "crown";
+    navigationSection.appendChild(flowerCrown);
+    
 
     let navigation = {
         home: homeDisplay,

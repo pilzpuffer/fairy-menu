@@ -11,9 +11,11 @@ let homeDisplay = function() {
         homeBlock.appendChild(newLine);
     }
 
-    addLine("This is a home page.");
-    addLine("second line of home page?");
-    addLine("go check out the menu!");
+    addLine("Вітаємо, магістерки!");
+    addLine("Магічний Ліс уже розкрив свої смарагдові обійми, а Ковен скликає вас під древні крони, де серед шепоту листя танцюють дріади й мерехтять крила фейрі.");
+    addLine("Цієї ночі на вас чекають чари, веселощі та лісові дива.");
+    addLine("Ступайте за покликом чарів - до бенкету, що розквітає в самому серці зачарованої гущавини");
+
 
     homeBlock.addEventListener("mouseover", function(event) {
         if (event.target === homeBlock.lastChild) {

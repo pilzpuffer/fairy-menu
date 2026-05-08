@@ -164,7 +164,8 @@ nav > button {
 .home-text, .contact-text {
     display: grid;
     place-items: center;
-    grid-template-rows: repeat(5, 1fr);
+    padding-top: 3.2rem;
+    grid-template-rows: 6rem 1fr repeat(2, 9rem);
 
     width: 60%;
     margin: auto;
@@ -172,7 +173,7 @@ nav > button {
 
 .home-text > div,
 .contact-text > div {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-family: 'Cormorant Garamond';
     text-align: center;
     z-index: 2;
@@ -212,6 +213,7 @@ nav > button {
 .menu-nav {
     font-family: "Corinthia";
     font-size: clamp(2.3rem, 4vw, 3rem); 
+    position: relative;
 
     margin: auto;
     padding: 2rem 0;
@@ -239,6 +241,15 @@ nav > button {
 
 button > img {
     width: 2.5em;
+}
+
+#crown {
+    position: absolute;
+    width: 8rem;
+    height: auto;
+
+    justify-self: center;
+    margin-top: -4rem;
 }
 
 .menu-nav > button > img {
