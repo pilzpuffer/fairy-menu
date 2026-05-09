@@ -1,5 +1,7 @@
 let contactDisplay = function() {
 
+    //add a crystal ball which will show a random fortune - add about 14 variants for variety, maybe should be styled ad taro cards?
+
     let content = document.querySelector("#content");
 
     let contactBlock = document.createElement("div");

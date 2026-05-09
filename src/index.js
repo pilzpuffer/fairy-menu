@@ -27,14 +27,14 @@ window.addEventListener("load", function() {
     let navigation = {
         home: homeDisplay,
         menu: menuDisplay,
-        contact: contactDisplay 
+        ritual: contactDisplay 
     }
 
     let allMenuButtons = document.querySelectorAll("nav > button");
 
     allMenuButtons.forEach((button) => {
         let menuMove = document.querySelector("#menu");
-        let contactMove = document.querySelector("#contact");
+        let contactMove = document.querySelector("#ritual");
 
         button.addEventListener('click', function(event) {
             event.target.classList.add("hidden");
@@ -51,7 +51,7 @@ window.addEventListener("load", function() {
                 menuMove.style.gridRow = 1;
                 contactMove.style.gridColumn = 3;
                 contactMove.style.gridRow = 1;
-            } else if (event.target.id === "contact") {
+            } else if (event.target.id === "ritual") {
                 menuMove.style.gridColumn = 3;
                 menuMove.style.gridRow = 1;
             } else {

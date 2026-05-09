@@ -165,7 +165,7 @@ nav > button {
     display: grid;
     place-items: center;
     padding-top: 3.2rem;
-    grid-template-rows: 6rem 1fr repeat(2, 9rem);
+    grid-template-rows: 6rem 1fr 9rem;
 
     width: 60%;
     margin: auto;
