@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
-nav, #content, header {
+nav, #content, header  {
     margin: auto;
     width: 60%; /* use clamp later, find good width */
     background-color: var(--content-backer);
@@ -103,7 +103,7 @@ header {
     margin-top: 2.3rem;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
-    border-bottom: 0;
+    border-bottom: var(--content-backer);
     padding: 10rem clamp(1.5rem, 3vw, 5%) 1rem;
 
     border: 2px solid var(--border-color);
@@ -139,7 +139,7 @@ nav > button {
 #content {
     min-height: calc(100vh - 14.72rem);
     padding-bottom: 2rem;
-    margin-top: -1rem;;
+    margin-top: -1rem;
 
     margin-bottom: 5rem;
     border: 2px solid var(--border-color);
@@ -215,7 +215,6 @@ nav > button {
     font-size: clamp(2.3rem, 4vw, 3rem); 
     position: relative;
 
-    margin: auto;
     padding: 2rem 0;
     width: 80%;
 
@@ -243,13 +242,23 @@ button > img {
     width: 2.5em;
 }
 
-#crown {
+#crown, #fly {
     position: absolute;
     width: 8rem;
     height: auto;
+}
 
+#crown {
     justify-self: center;
     margin-top: -4rem;
+}
+
+#fly {
+    width: 12rem;
+    justify-self: center;
+    top: 1%;
+    left: 60%;
+    z-index: 3;
 }
 
 .menu-nav > button > img {
