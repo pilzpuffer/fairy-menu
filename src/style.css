@@ -242,7 +242,7 @@ button > img {
     width: 2.5em;
 }
 
-#crown, #fly {
+#crown, #fly, #run {
     position: absolute;
     width: 8rem;
     height: auto;
@@ -253,12 +253,17 @@ button > img {
     margin-top: -4rem;
 }
 
-#fly {
-    width: 12rem;
+#fly, #run {
+    width: 16rem;
     justify-self: center;
     top: 1%;
     left: 60%;
     z-index: 3;
+}
+
+#run {
+    top: 70%;
+    left: 10%;
 }
 
 .menu-nav > button > img {

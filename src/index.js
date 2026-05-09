@@ -7,6 +7,8 @@ import { homeDisplay } from "./home.js";
 
 import flowerCrownImage from "./assets/img/flowerCrown.svg";
 import flyingFairyImage from "./assets/img/fairyFlying.svg";
+import fairyRunningImage from "./assets/img/fairyRunning.svg";
+import fairyLyingImage from "./assets/img/fairyLying.svg";
 
 window.addEventListener("load", function() {
     let content = document.querySelector("#content");
@@ -28,9 +30,12 @@ window.addEventListener("load", function() {
     flyingFay.src = flyingFairyImage;
     flyingFay.id = "fly";
 
+    let runningFay = document.createElement("img");
+    runningFay.src = fairyRunningImage;
+    runningFay.id = "run";
+
     navigationSection.appendChild(flowerCrown);
     navigationSection.appendChild(flyingFay);
-    
 
     let navigation = {
         home: homeDisplay,
@@ -51,7 +56,7 @@ window.addEventListener("load", function() {
             let nonActiveMenuItems = [ ...allMenuButtons ].filter( button => button != event.target);
             nonActiveMenuItems.forEach((item) => item.classList.remove("hidden"));
 
-            content.replaceChildren();
+            content.replaceChildren(runningFay);
             navigation[`${event.target.id}`](); 
 
             if (event.target.id === "home") {
@@ -72,5 +77,6 @@ window.addEventListener("load", function() {
     })
 
     document.getElementById('home').click();
+    content.appendChild(runningFay);
 })
 
