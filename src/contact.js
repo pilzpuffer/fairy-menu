@@ -25,14 +25,6 @@ let contactDisplay = function() {
     let normalText = function() {
         addLine("Test text to distinguish contacts");
         addLine("This is a second line");
-
-        // content.appendChild(contactBlock); <-still deciding if I want to keep this visual highlight for the alt menu
-        // contactBlock.addEventListener("mouseover", function() {
-        // if (event.target === contactBlock.firstChild) {
-        //     contactBlock.firstChild.style.fontWeight = "bold";
-        // } else {
-        //     contactBlock.firstChild.style.fontWeight = ""
-        // }
     }
 
     normalText();

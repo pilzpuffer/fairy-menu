@@ -161,10 +161,14 @@ let menuDisplay = function() {
     }
 
     let previousTab = [];
+    let lie = document.querySelector("#lie");
+    let run = document.querySelector("#run");
+    let flower = document.querySelector("#flower");
+    let flower2 = document.querySelector("#flower2");
 
     let menuViews = document.querySelectorAll(".menu-nav > button");
     let renewMenu = function() {
-        content.replaceChildren(menuBlock);
+        content.replaceChildren(menuBlock, run, lie, flower, flower2);
         menuOptions[`${event.target.id}`]();
     }
         menuViews.forEach((button) => {

@@ -9,6 +9,7 @@ import flowerCrownImage from "./assets/img/flowerCrown.svg";
 import flyingFairyImage from "./assets/img/fairyFlying.svg";
 import fairyRunningImage from "./assets/img/fairyRunning.svg";
 import fairyLyingImage from "./assets/img/fairyLying.svg";
+import longFlowerImage from "./assets/img/longFlower.png"
 
 window.addEventListener("load", function() {
     let content = document.querySelector("#content");
@@ -38,6 +39,15 @@ window.addEventListener("load", function() {
     lyingFay.src = fairyLyingImage;
     lyingFay.id = "lie";
 
+    let longFlower = document.createElement("img");
+    longFlower.src = longFlowerImage;
+    longFlower.id = "flower";
+
+    let longFlower2 = document.createElement("img");
+    longFlower2.src = longFlowerImage;
+    longFlower2.id = "flower2";
+
+
     navigationSection.appendChild(flowerCrown);
     navigationSection.appendChild(flyingFay);
 
@@ -61,7 +71,7 @@ window.addEventListener("load", function() {
             let nonActiveMenuItems = [ ...allMenuButtons ].filter( button => button != event.target );
             nonActiveMenuItems.forEach((item) => item.classList.remove("hidden"));
 
-            content.replaceChildren(runningFay, lyingFay);
+            content.replaceChildren(runningFay, lyingFay, longFlower, longFlower2);
             navigation[`${event.target.id}`](); 
 
             if (event.target.id === "home") {
@@ -84,6 +94,6 @@ window.addEventListener("load", function() {
     document.getElementById('home').click();
     content.appendChild(runningFay);
     content.appendChild(lyingFay);
-
-    
+    content.appendChild(longFlower);
+    content.appendChild(longFlower2);
 })

@@ -140,7 +140,7 @@ nav > button {
 
 #content {
     min-height: calc(100vh - 14.72rem);
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
     margin-top: -1rem;
 
     margin-bottom: 5rem;
@@ -244,7 +244,7 @@ button > img {
     width: 2.5em;
 }
 
-#crown, #fly, #run, #lie {
+#crown, #fly, #run, #lie, #flower, #flower2 {
     position: absolute;
     width: 8rem;
     height: auto;
@@ -266,14 +266,32 @@ button > img {
 }
 
 #run {
+    width: 14rem;
     left: 10%;
-    top: 25%;
+    top: 0;
+    padding-top: 16rem;
 }
 
 #lie {
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translateX(-50%);
+}
+
+#flower, #flower2 {
+    left: 11%;
+    z-index: 3;
+    bottom: 0;
+    padding-bottom: 5rem;
+}
+
+#flower {
+    width: 6rem;
+}
+
+#flower2 {
+    width: 5rem;
+    transform: rotate(-4deg)
 }
 
 .menu-nav > button > img {
@@ -434,6 +452,10 @@ button > img {
     #run {
         left: 5%;
     }
+
+    #flower, #flower2 {
+        left: 11%;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -443,6 +465,10 @@ button > img {
 
     #run {
         left: -5%;
+    }
+
+    #flower, #flower2 {
+        left: 1%;
     }
 }
 
@@ -454,6 +480,10 @@ button > img {
     #run {
         left: -10%;
     }
+
+    #flower, #flower2 {
+        left: -2%;
+    }
 }
 
 @media screen and (max-width: 630px) {
@@ -464,11 +494,19 @@ button > img {
     #run {
         left: -15%;
     }
+
+    #flower, #flower2 {
+        left: -3%;
+    }
 }
 
 @media screen and (max-width:550px) {
     #run {
         left: -25%;
+    }
+
+    #flower, #flower2 {
+        left: -4%;
     }
 }
 
@@ -479,5 +517,9 @@ button > img {
 
     #run {
         left: -40%;
+    }
+
+    #flower, #flower2 {
+        left: -7%;
     }
 }
