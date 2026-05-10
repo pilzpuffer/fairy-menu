@@ -63,19 +63,21 @@ html {
 body, html {
     min-height: -webkit-fill-available;
     box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
 
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     
-    overflow-x: hidden;
-    overflow-y: visible;
     min-height: 100vh;
     height: 100%;
     
     background: var(--background-backer);
     color: var(--font-color);
+
+    position: relative;
 }
 
 input, button, textarea, select {
@@ -242,7 +244,7 @@ button > img {
     width: 2.5em;
 }
 
-#crown, #fly, #run {
+#crown, #fly, #run, #lie {
     position: absolute;
     width: 8rem;
     height: auto;
@@ -253,17 +255,25 @@ button > img {
     margin-top: -4rem;
 }
 
-#fly, #run {
+#fly, #run, #lie {
     width: 16rem;
-    justify-self: center;
-    top: 1%;
-    left: 60%;
     z-index: 3;
 }
 
+#fly {
+    top: 1%;
+    left: 60%;
+}
+
 #run {
-    top: 70%;
     left: 10%;
+    top: 25%;
+}
+
+#lie {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .menu-nav > button > img {
@@ -420,11 +430,19 @@ button > img {
     header, #content, .main-nav {
         width: 70%
     }
+
+    #run {
+        left: 5%;
+    }
 }
 
 @media screen and (max-width: 800px) {
     header, #content, .main-nav {
         width: 85%
+    }
+
+    #run {
+        left: -5%;
     }
 }
 
@@ -432,16 +450,34 @@ button > img {
     header, #content, .main-nav {
         width: 90%
     }
+
+    #run {
+        left: -10%;
+    }
 }
 
 @media screen and (max-width: 630px) {
     .description {
         padding-top: 1rem;
     } 
+
+    #run {
+        left: -15%;
+    }
+}
+
+@media screen and (max-width:550px) {
+    #run {
+        left: -25%;
+    }
 }
 
 @media screen and (max-width: 430px) {
     .item.title-category + .item {
         margin-top: 4.3rem;
+    }
+
+    #run {
+        left: -40%;
     }
 }

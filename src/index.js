@@ -34,6 +34,10 @@ window.addEventListener("load", function() {
     runningFay.src = fairyRunningImage;
     runningFay.id = "run";
 
+    let lyingFay = document.createElement("img");
+    lyingFay.src = fairyLyingImage;
+    lyingFay.id = "lie";
+
     navigationSection.appendChild(flowerCrown);
     navigationSection.appendChild(flyingFay);
 
@@ -50,13 +54,14 @@ window.addEventListener("load", function() {
         let contactMove = document.querySelector("#ritual");
 
         button.addEventListener('click', function(event) {
+
             event.target.classList.add("hidden");
             title.textContent = event.target.textContent;
 
-            let nonActiveMenuItems = [ ...allMenuButtons ].filter( button => button != event.target);
+            let nonActiveMenuItems = [ ...allMenuButtons ].filter( button => button != event.target );
             nonActiveMenuItems.forEach((item) => item.classList.remove("hidden"));
 
-            content.replaceChildren(runningFay);
+            content.replaceChildren(runningFay, lyingFay);
             navigation[`${event.target.id}`](); 
 
             if (event.target.id === "home") {
@@ -78,5 +83,7 @@ window.addEventListener("load", function() {
 
     document.getElementById('home').click();
     content.appendChild(runningFay);
-})
+    content.appendChild(lyingFay);
 
+    
+})

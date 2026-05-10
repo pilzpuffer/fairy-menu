@@ -160,11 +160,24 @@ let menuDisplay = function() {
         food: foodMenu
     }
 
+    let previousTab = [];
+
     let menuViews = document.querySelectorAll(".menu-nav > button");
+    let renewMenu = function() {
+        content.replaceChildren(menuBlock);
+        menuOptions[`${event.target.id}`]();
+    }
         menuViews.forEach((button) => {
             button.addEventListener("click", function(event) {
-                content.replaceChildren(menuBlock);
-                menuOptions[`${event.target.id}`]();
+                previousTab.push(event.target.id);
+
+                if (previousTab.length >= 2) {
+                    if (previousTab[previousTab.length-2] !== previousTab[previousTab.length-1]) {
+                        renewMenu();
+                    } 
+                } else {
+                    renewMenu();
+                } 
             })
     })
 }
