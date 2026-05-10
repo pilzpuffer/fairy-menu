@@ -279,7 +279,8 @@ button > img {
 }
 
 #flower, #flower2 {
-    left: 11%;
+    left: start;
+    margin-left: -3rem;
     z-index: 3;
     bottom: 0;
     padding-bottom: 5rem;
@@ -452,10 +453,6 @@ button > img {
     #run {
         left: 5%;
     }
-
-    #flower, #flower2 {
-        left: 11%;
-    }
 }
 
 @media screen and (max-width: 800px) {
@@ -465,10 +462,6 @@ button > img {
 
     #run {
         left: -5%;
-    }
-
-    #flower, #flower2 {
-        left: 1%;
     }
 }
 
@@ -480,10 +473,6 @@ button > img {
     #run {
         left: -10%;
     }
-
-    #flower, #flower2 {
-        left: -2%;
-    }
 }
 
 @media screen and (max-width: 630px) {
@@ -494,19 +483,11 @@ button > img {
     #run {
         left: -15%;
     }
-
-    #flower, #flower2 {
-        left: -3%;
-    }
 }
 
 @media screen and (max-width:550px) {
     #run {
         left: -25%;
-    }
-
-    #flower, #flower2 {
-        left: -4%;
     }
 }
 
@@ -517,9 +498,5 @@ button > img {
 
     #run {
         left: -40%;
-    }
-
-    #flower, #flower2 {
-        left: -7%;
     }
 }
