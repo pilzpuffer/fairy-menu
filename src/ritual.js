@@ -1,8 +1,14 @@
-let contactDisplay = function() {
+import crystalBallImage from "./assets/img/crystalBall.png";
+
+let ritualDisplay = function() {
 
     //add a crystal ball which will show a random fortune - add about 14 variants for variety, maybe should be styled ad taro cards?
 
     let content = document.querySelector("#content");
+
+    let crystalBall = document.createElement("img");
+    crystalBall.src = crystalBallImage;
+    crystalBall.id = 'ball';
 
     let contactBlock = document.createElement("div");
     contactBlock.classList.add("contact-text");
@@ -11,13 +17,9 @@ let contactDisplay = function() {
         let newLine = document.createElement("div");
         newLine.textContent = text;
 
-        if ((text.includes(":") && !text.includes(" ")) || (text.includes(":") && state.vampire === true)) {
+        if (text.includes(":") && !text.includes(" ")) {
             newLine.classList.add("contact-title");
-        } else if (text.includes("announce") || text.includes("consent") || text.includes("admitted")) {
-            newLine.classList.add("rules");
-        } else if (text.includes("+")) {
-            newLine.classList.add("phone");
-        }
+        } 
 
         contactBlock.appendChild(newLine);
     }
@@ -28,8 +30,9 @@ let contactDisplay = function() {
     }
 
     normalText();
+    content.appendChild(crystalBall);
     content.appendChild(contactBlock);
 
 }
 
-export { contactDisplay };
+export { ritualDisplay };

@@ -193,25 +193,6 @@ nav > button {
     font-size: 1.8rem !important; 
 }
 
-.rules {
-    display: grid;
-    grid-template-columns: 0.25fr 3fr;
-    place-items: center;
-    gap: 0.5rem;
-}
-
-.rules img {
-    height: 1.3rem;
-    filter: invert(1);
-
-    grid-column-start: 1;
-    grid-row: 1;
-}
-
-.phone {
-    align-self: start;
-}
-
 .menu-nav {
     font-family: "Corinthia";
     font-size: clamp(2.3rem, 4vw, 3rem); 
@@ -267,9 +248,10 @@ button > img {
 
 #run {
     width: 14rem;
-    left: 10%;
     top: 0;
     padding-top: 16rem;
+    margin-left: -5rem;
+    /* add additional sizing/margin rules for width less than 550 */
 }
 
 #lie {
@@ -293,6 +275,15 @@ button > img {
 #flower2 {
     width: 5rem;
     transform: rotate(-4deg)
+}
+
+#ball {
+    width: 70%;
+    height: auto;
+    justify-self: center;
+
+    display: grid;
+    padding-top: 3.2rem;
 }
 
 .menu-nav > button > img {
@@ -449,19 +440,11 @@ button > img {
     header, #content, .main-nav {
         width: 70%
     }
-
-    #run {
-        left: 5%;
-    }
 }
 
 @media screen and (max-width: 800px) {
     header, #content, .main-nav {
         width: 85%
-    }
-
-    #run {
-        left: -5%;
     }
 }
 
@@ -469,34 +452,16 @@ button > img {
     header, #content, .main-nav {
         width: 90%
     }
-
-    #run {
-        left: -10%;
-    }
 }
 
 @media screen and (max-width: 630px) {
     .description {
         padding-top: 1rem;
     } 
-
-    #run {
-        left: -15%;
-    }
-}
-
-@media screen and (max-width:550px) {
-    #run {
-        left: -25%;
-    }
 }
 
 @media screen and (max-width: 430px) {
     .item.title-category + .item {
         margin-top: 4.3rem;
-    }
-
-    #run {
-        left: -40%;
     }
 }

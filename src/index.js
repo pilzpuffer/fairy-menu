@@ -2,7 +2,7 @@ import "./style.css";
 
 import { flowerStorm, replant } from "./flowers.js";
 import { menuDisplay } from "./menu.js";
-import { contactDisplay } from "./contact.js";
+import { ritualDisplay } from "./ritual.js";
 import { homeDisplay } from "./home.js";
 
 import flowerCrownImage from "./assets/img/flowerCrown.svg";
@@ -54,14 +54,14 @@ window.addEventListener("load", function() {
     let navigation = {
         home: homeDisplay,
         menu: menuDisplay,
-        ritual: contactDisplay 
+        ritual: ritualDisplay 
     }
 
     let allMenuButtons = document.querySelectorAll("nav > button");
 
     allMenuButtons.forEach((button) => {
         let menuMove = document.querySelector("#menu");
-        let contactMove = document.querySelector("#ritual");
+        let ritualMove = document.querySelector("#ritual");
 
         button.addEventListener('click', function(event) {
 
@@ -77,23 +77,19 @@ window.addEventListener("load", function() {
             if (event.target.id === "home") {
                 menuMove.style.gridColumn = 1;
                 menuMove.style.gridRow = 1;
-                contactMove.style.gridColumn = 3;
-                contactMove.style.gridRow = 1;
+                ritualMove.style.gridColumn = 3;
+                ritualMove.style.gridRow = 1;
             } else if (event.target.id === "ritual") {
                 menuMove.style.gridColumn = 3;
                 menuMove.style.gridRow = 1;
             } else {
                 menuMove.style.gridColumn = "";
                 menuMove.style.gridRow = "";
-                contactMove.style.gridColumn = "";
-                contactMove.style.gridRow = "";
+                ritualMove.style.gridColumn = "";
+                ritualMove.style.gridRow = "";
             }
         })
     })
 
     document.getElementById('home').click();
-    content.appendChild(runningFay);
-    content.appendChild(lyingFay);
-    content.appendChild(longFlower);
-    content.appendChild(longFlower2);
 })
