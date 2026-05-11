@@ -78,6 +78,7 @@ body {
     color: var(--font-color);
 
     position: relative;
+    user-select: none;
 }
 
 input, button, textarea, select {
@@ -127,6 +128,7 @@ header {
 
 .main-nav > button {
     background: none;
+    cursor: pointer;
 }
 
 .main-nav > div, .main-nav > button {
@@ -163,7 +165,7 @@ nav > button {
     visibility: hidden;
 }
 
-.home-text, .contact-text {
+.home-text, .ritual-text {
     display: grid;
     place-items: center;
     padding-top: 3.2rem;
@@ -174,23 +176,15 @@ nav > button {
 }
 
 .home-text > div,
-.contact-text > div {
+.ritual-text > div {
     font-size: 1.6rem;
     font-family: 'Cormorant Garamond';
     text-align: center;
     z-index: 2;
 }
 
-.contact-text  {
-    grid-template-rows: repeat(10, 1fr);
-}
-
-.contact-text .contact-title {
-    align-self: end;
-}
-
-.contact-title {
-    font-size: 1.8rem !important; 
+.ritual-text  {
+    grid-template-rows: 1fr;
 }
 
 .menu-nav {
@@ -215,6 +209,7 @@ nav > button {
     gap: 1rem;
     background: none;
     z-index: 2;
+    cursor: pointer;
 }
 
 .menu-nav > button:first-child {
@@ -229,6 +224,7 @@ button > img {
     position: absolute;
     width: 8rem;
     height: auto;
+    pointer-events: none;
 }
 
 #crown {
@@ -242,8 +238,8 @@ button > img {
 }
 
 #fly {
-    top: 1%;
-    left: 60%;
+    margin-top: -12rem;
+    left: 65%;
 }
 
 #run {
@@ -302,7 +298,7 @@ button > img {
     grid-template-rows: 4rem 0rem;
     place-items: center;
     transition: all 0.5s ease-out;
-    color: var(--darker-font)
+    color: var(--darker-font);
 }
 
 .item + .item {
@@ -332,6 +328,7 @@ button > img {
     font-size: 1.8rem;
     align-self: end;
     text-align: center;
+    cursor: pointer;
 }
 
 .description {
