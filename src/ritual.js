@@ -24,10 +24,20 @@ let ritualDisplay = function() {
 
     let addLine = function(text, place) {
         let newLine = document.createElement("div");
-        newLine.textContent = text;
+        
 
         if (place === "ball") {
             newLine.classList.add("ball-text");
+
+            let divideToWord = text.split("");
+            for (let i = 0; i < divideToWord.length; i++) {
+                let word = document.createElement("span");
+                word.textContent = divideToWord[i];
+                word.style.animationDelay = `${1+i}s`;
+                newLine.appendChild(word);
+            }
+        } else {
+            newLine.textContent = text;
         }
         places[`${place}`].appendChild(newLine);
     }
