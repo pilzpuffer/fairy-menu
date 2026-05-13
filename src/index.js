@@ -64,7 +64,7 @@ window.addEventListener("load", function() {
         let ritualMove = document.querySelector("#ritual");
 
         button.addEventListener('click', function(event) {
-
+            replant();
             event.target.classList.add("hidden");
             title.textContent = event.target.textContent;
 

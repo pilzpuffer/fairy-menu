@@ -294,8 +294,6 @@ button > img {
     justify-self: center;
 
     display: grid;
-
-    position: relative;
 }
 
 .menu-nav > button > img {

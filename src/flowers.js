@@ -35,7 +35,7 @@ let flowerStorm = function () {
                         ["fairy", "dwarf", "giant", "goliath"]
                     ];
 
-    for (let n = 0; n < 20; n++) {
+    for (let n = 0; n < 30; n++) {
         let body = document.querySelector("body");
 
         let plant = document.createElement("img");
@@ -47,6 +47,22 @@ let flowerStorm = function () {
             let maxY = body.scrollHeight * 0.91;
             let x = Math.random() * maxX;
             let y = Math.random() * maxY;
+
+            let ball = document.querySelector("#ball")
+
+            if (ball !== null) {
+                let ballSpace = ball.getBoundingClientRect();
+                console.log(ballSpace);
+                console.log(ballSpace.x)
+
+                while (x >= ballSpace.left && x <= ballSpace.right) {
+                    x = Math.random() * maxX;
+                }
+
+                while (y >= ballSpace.top && y <= ballSpace.bottom) {
+                    y = Math.random() * maxY;
+                }
+            }
 
             plant.style = `left: ${x}px; top: ${y}px;`;
             body.appendChild(plant)
