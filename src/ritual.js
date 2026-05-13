@@ -4,6 +4,9 @@ let ritualDisplay = function() {
 
     let content = document.querySelector("#content");
 
+    let ballHolder = document.createElement("div");
+    ballHolder.classList.add("ball-block");
+
     let crystalBall = document.createElement("img");
     crystalBall.src = crystalBallImage;
     crystalBall.id = 'ball';
@@ -13,15 +16,27 @@ let ritualDisplay = function() {
     let bottomRitualTextBlock = document.createElement("div");
     bottomRitualTextBlock.classList.add("ritual-text");
 
-    let addLine = function(text) {
-        let newLine = document.createElement("div");
-        newLine.textContent = text;
-        upperRitualTextBlock.appendChild(newLine);
+    let places = {
+        upper: upperRitualTextBlock,
+        ball: ballHolder,
+        lower: bottomRitualTextBlock
     }
 
-    addLine("Дозвольте кулі пророцтв зазирнути у вашу долю та обрати смак цієї магічної ночі.");
+    let addLine = function(text, place) {
+        let newLine = document.createElement("div");
+        newLine.textContent = text;
+
+        if (place === "ball") {
+            newLine.classList.add("ball-text");
+        }
+        places[`${place}`].appendChild(newLine);
+    }
+
+    addLine("Дозвольте кулі пророцтв зазирнути у вашу долю та обрати смак цієї магічної ночі.", "upper");
+    addLine("balling.", "ball");
     content.appendChild(upperRitualTextBlock);
-    content.appendChild(crystalBall);
+    ballHolder.appendChild(crystalBall);
+    content.appendChild(ballHolder);
     content.appendChild(bottomRitualTextBlock);
 
 }

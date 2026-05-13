@@ -187,6 +187,21 @@ nav > button {
     grid-template-rows: 1fr;
 }
 
+.ball-block {
+    position: relative;
+    padding-top: 3.2rem;
+}
+
+.ball-text {
+    position: absolute;
+    justify-self: center;
+    width: fit-content;
+    max-width: 30%;
+
+    z-index: 3;
+    padding-top: 15%;
+}
+
 .menu-nav {
     font-family: "Corinthia";
     font-size: clamp(2.3rem, 4vw, 3rem); 
@@ -279,7 +294,8 @@ button > img {
     justify-self: center;
 
     display: grid;
-    padding-top: 3.2rem;
+
+    position: relative;
 }
 
 .menu-nav > button > img {
