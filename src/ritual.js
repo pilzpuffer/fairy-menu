@@ -33,7 +33,7 @@ let ritualDisplay = function() {
             for (let i = 0; i < divideToWord.length; i++) {
                 let word = document.createElement("span");
                 word.textContent = divideToWord[i];
-                word.style.animationDelay = `${1+i}s`;
+                word.style.animationDelay = `${0+(0.2*i)}s`;
                 newLine.appendChild(word);
             }
         } else {

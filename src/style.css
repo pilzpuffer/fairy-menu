@@ -214,7 +214,9 @@ span {
   display: inline-block;
   opacity: 0;
   filter: blur(4px);
-  animation: fade-in 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  animation: 
+            fade-in 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0),
+            wave 2s ease-in-out infinite;
 }
 
 @keyframes fade-in {
@@ -222,6 +224,15 @@ span {
     opacity: 1;
     filter: blur(0);
   }
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-1.6rem);
+    }
 }
 
 .menu-nav {
