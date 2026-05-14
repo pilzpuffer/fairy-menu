@@ -1,0 +1,1 @@
+Animations used in this project are based off those 2 animation demonstrations: https://codepen.io/alvarotrigo/pen/ExvqdNa AND https://codepen.io/nefejames/pen/gbYYdpKgbYYdpK

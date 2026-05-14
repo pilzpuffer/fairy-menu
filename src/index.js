@@ -16,7 +16,9 @@ window.addEventListener("load", function() {
     flowerStorm();
 
     window.addEventListener("resize", function() {
-        replant();
+        if (typeof screen.orientation !== 'undefined' && window.innerWidth >= 800) {
+            replant();
+        }  
     })
 
     let title = document.querySelector("#center-title");

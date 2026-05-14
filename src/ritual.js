@@ -1,4 +1,4 @@
-import crystalBallImage from "./assets/img/crystalBall.png";
+import crystalBallImage from "./assets/img/crystalBall.svg";
 
 let ritualDisplay = function() {
 

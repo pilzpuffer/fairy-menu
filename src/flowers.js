@@ -26,6 +26,7 @@ let replant = debounce(function() {
 }, 150);
 
 let flowerStorm = function () {
+    let plantMax;
     let plantVariety =[
                         ["mirror"], 
                         ["shuffleL", "shuffleR", "slideL", "slideR"], 
@@ -35,7 +36,15 @@ let flowerStorm = function () {
                         ["fairy", "dwarf", "giant", "goliath"]
                     ];
 
-    for (let n = 0; n < 30; n++) {
+    console.log(window.innerWidth, window.innerHeight);
+    if ( window.innerWidth <= 800 ) {
+        plantMax = 15;
+    } else {
+        plantMax = 30;
+    }
+    console.log(`plantMax is ${plantMax}`);
+
+    for (let n = 0; n < plantMax; n++) {
         let body = document.querySelector("body");
 
         let plant = document.createElement("img");
