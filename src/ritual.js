@@ -15,6 +15,7 @@ let ritualDisplay = function() {
     upperRitualTextBlock.classList.add("ritual-text");
     let bottomRitualTextBlock = document.createElement("div");
     bottomRitualTextBlock.classList.add("ritual-text");
+    bottomRitualTextBlock.id = 'fortune';
 
     let places = {
         upper: upperRitualTextBlock,
@@ -55,7 +56,21 @@ let ritualDisplay = function() {
     }
 
     let allCocktailNames = ["Faerie Wine", "Beltane Spark", "Summer Court", "Lavender Moon", "Fairy Ring", "Wild Hunt"];
-
+    let faerieFortunes = ['faerie test', 'faerie test2']
+    let beltaneFortunes = ['beltane test', 'beltane test2']
+    let summerFortunes = ['summer test', 'summer test2']
+    let lavenderFortunes = ['lavender test', 'lavender test2']
+    let fairyFortunes = ['fairy test', 'fairy test2']
+    let wildFortunes = ['wild test', 'wild test2']
+    
+    let cocktailFortune = {
+        faerie: faerieFortunes,
+        beltane: beltaneFortunes,
+        summer: summerFortunes,
+        lavender: lavenderFortunes,
+        fairy: fairyFortunes,
+        wild: wildFortunes
+    }
     crystalBall.addEventListener("click", function() {
         let ballText = document.querySelector(".ball-text");
 
@@ -63,11 +78,24 @@ let ritualDisplay = function() {
             return allCocktailNames[Math.floor(Math.random() * allCocktailNames.length)];
         }
 
+        let currentDrink = getDrink();
+
         if (ballText === null) {
-            addLine(getDrink(), "ball");
+            addLine(currentDrink, "ball");
         } else {
             ballHolder.replaceChildren(crystalBall);
-            addLine(getDrink(), "ball");
+            addLine(currentDrink, "ball");
+        }
+        
+        let drinkID = currentDrink.toLowerCase().split(" ")[0];
+        let fortuneVariety = cocktailFortune[drinkID].length;
+        
+
+        let fortuneCheck = document.querySelector("#fortune");
+        bottomRitualTextBlock.textContent = cocktailFortune[drinkID][Math.floor(Math.random() * fortuneVariety)]; 
+
+        if (fortuneCheck === null) {
+            content.appendChild(bottomRitualTextBlock);
         }
     })
 
@@ -75,8 +103,6 @@ let ritualDisplay = function() {
     content.appendChild(upperRitualTextBlock);
     ballHolder.appendChild(crystalBall);
     content.appendChild(ballHolder);
-    content.appendChild(bottomRitualTextBlock);
-
 }
 
 export { ritualDisplay };
