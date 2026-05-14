@@ -56,10 +56,6 @@
   padding: 0;
 }
 
-html {
-    min-height: 100%;
-}
-
 body, html {
     min-height: -webkit-fill-available;
     box-sizing: border-box;
@@ -70,15 +66,16 @@ body, html {
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    
-    min-height: 100vh;
-    /* height: 100%; */
-    
-    background: var(--background-backer);
     color: var(--font-color);
-
-    position: relative;
+    background: var(--background-backer);
     user-select: none;
+}
+
+#backer {
+    min-height: 100vh;
+    height: 100%;
+    overflow-y: visible;
+    position: relative;
 }
 
 input, button, textarea, select {
@@ -316,15 +313,13 @@ button > img {
 #lie {
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(50%);
 }
 
 #flower, #flower2 {
-    left: start;
-    margin-left: -3rem;
     z-index: 3;
     bottom: 0;
-    padding-bottom: 5rem;
+    transform: translateX(-50%);
 }
 
 #flower {
@@ -333,7 +328,7 @@ button > img {
 
 #flower2 {
     width: 5rem;
-    transform: rotate(-4deg)
+    transform: rotate(-3.5deg) translateX(-60%);
 }
 
 #ball {
