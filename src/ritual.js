@@ -28,13 +28,25 @@ let ritualDisplay = function() {
 
         if (place === "ball") {
             newLine.classList.add("ball-text");
+            let wordOne = document.createElement("div");
+            let wordTwo = document.createElement("div");
+            let divideToLetter = text.split("");
+            let letter;
+            for (let i = 0; i < divideToLetter.length; i++) {
+                if (divideToLetter[i] !== " ") {
+                    letter = document.createElement("span");
+                    letter.textContent = divideToLetter[i];
+                    letter.style.animationDelay = `${0+(0.2*i)}s`;
 
-            let divideToWord = text.split("");
-            for (let i = 0; i < divideToWord.length; i++) {
-                let word = document.createElement("span");
-                word.textContent = divideToWord[i];
-                word.style.animationDelay = `${0+(0.2*i)}s`;
-                newLine.appendChild(word);
+                    if (divideToLetter.indexOf(" ") > i) {
+                        wordOne.appendChild(letter);
+                    } else {
+                        wordTwo.appendChild(letter);
+                    }
+
+                    newLine.appendChild(wordOne);
+                    newLine.appendChild(wordTwo);
+                }
             }
         } else {
             newLine.textContent = text;
@@ -42,8 +54,24 @@ let ritualDisplay = function() {
         places[`${place}`].appendChild(newLine);
     }
 
+    let allCocktailNames = ["Faerie Wine", "Beltane Spark", "Summer Court", "Lavender Moon", "Fairy Ring", "Wild Hunt"];
+
+    crystalBall.addEventListener("click", function() {
+        let ballText = document.querySelector(".ball-text");
+
+        let getDrink = function() {
+            return allCocktailNames[Math.floor(Math.random() * allCocktailNames.length)];
+        }
+
+        if (ballText === null) {
+            addLine(getDrink(), "ball");
+        } else {
+            ballHolder.replaceChildren(crystalBall);
+            addLine(getDrink(), "ball");
+        }
+    })
+
     addLine("Дозвольте кулі пророцтв зазирнути у вашу долю та обрати смак цієї магічної ночі.", "upper");
-    addLine("balling.", "ball");
     content.appendChild(upperRitualTextBlock);
     ballHolder.appendChild(crystalBall);
     content.appendChild(ballHolder);

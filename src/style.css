@@ -195,13 +195,22 @@ nav > button {
 .ball-text {
     position: absolute;
     justify-self: center;
+    top: 0;
     width: fit-content;
     max-width: 30%;
 
     z-index: 3;
-    padding-top: 15%;
+    padding-top: 20%;
+
     transform: scale(0.94);
     animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+
+    display: grid;
+    justify-items: center;
+    row-gap: 0.5rem;
+
+    font-family: "Cormorant Garamond";
+    font-size: 2.5rem;
 }
 
 @keyframes scale {
@@ -231,7 +240,7 @@ span {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-1.6rem);
+        transform: translateY(-1rem);
     }
 }
 

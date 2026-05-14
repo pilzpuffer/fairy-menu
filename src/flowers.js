@@ -52,8 +52,6 @@ let flowerStorm = function () {
 
             if (ball !== null) {
                 let ballSpace = ball.getBoundingClientRect();
-                console.log(ballSpace);
-                console.log(ballSpace.x)
 
                 while (x >= ballSpace.left && x <= ballSpace.right) {
                     x = Math.random() * maxX;
