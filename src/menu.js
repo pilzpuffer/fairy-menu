@@ -28,21 +28,24 @@ let menuDisplay = function() {
 
     content.appendChild(menuBlock);
 
-    drinksButton.addEventListener("mouseover", function() {
-        drinkImage.style.transform = "rotate(20deg)";
-    })
+    if ( typeof screen.orientation !== 'undefined' ) {
+        drinksButton.addEventListener("mouseover", function() {
+            drinkImage.classList.add("rotate-forward");
+        })
 
-    drinksButton.addEventListener("mouseout", function() {
-        drinkImage.style.transform = "";
-    })
+        drinksButton.addEventListener("mouseout", function() {
+            drinkImage.classList.remove("rotate-forward");
+        })
 
-    foodButton.addEventListener("mouseover", function() {
-        foodImage.style.transform = "rotate(-20deg)";
-    })
+        foodButton.addEventListener("mouseover", function() {
+            foodImage.classList.add("rotate-backward");
+        })
 
-    foodButton.addEventListener("mouseout", function() {
-        foodImage.style.transform = "";
-    })
+        foodButton.addEventListener("mouseout", function() {
+            foodImage.classList.remove("rotate-backward");
+        })
+    } 
+    
 
     let setUpItem = function(place, title, ingredients) {
         let item = document.createElement("div");
@@ -163,10 +166,12 @@ let menuDisplay = function() {
     let previousTab = [];
 
     let menuViews = document.querySelectorAll(".menu-nav > button");
-    let longFlower = document.querySelector("#flower")
-    let longFlower2 = document.querySelector("#flower2")
+    let longFlower = document.querySelector("#flower");
+    let longFlower2 = document.querySelector("#flower2");
+    let run = document.querySelector("#run");
+
     let renewMenu = function() {
-        content.replaceChildren(menuBlock, longFlower, longFlower2);
+        content.replaceChildren(menuBlock, run, longFlower, longFlower2);
         menuOptions[`${event.target.id}`]();
     }
         menuViews.forEach((button) => {

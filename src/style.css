@@ -190,7 +190,7 @@ nav > button {
 }
 
 #fortune {
-    padding-bottom: 1.6rem;
+    padding-bottom: 1rem;
 }
 
 .ball-block {
@@ -206,7 +206,7 @@ nav > button {
     max-width: 30%;
 
     z-index: 3;
-    padding-top: 18%;
+    padding-top: 22%;
 
     transform: scale(0.94);
     animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
@@ -283,6 +283,15 @@ span {
 
 button > img {
     width: 2.5em;
+    pointer-events: none;
+}
+
+.rotate-forward {
+    transform: rotate(20deg)
+}
+
+.rotate-backward {
+    transform: rotate(-20deg)
 }
 
 #crown, #fly, #run, #lie, #flower, #flower2 {
@@ -315,7 +324,7 @@ button > img {
 }
 
 #lie {
-    bottom: 0;
+    bottom: 2%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -540,11 +549,60 @@ button > img {
         padding-top: 1rem;
     }
 
+    #fly, #run, #lie {
+        width: 12rem;
+    }
+
     #fly {
         left: 50%;
     }
 
     #run {
         transform: translateX(-70%);
+    }
+
+    #lie {
+        bottom: 4%;
+    }
+
+    #flower {
+        width: 3.4rem;
+    }
+
+    #flower2 {
+        width: 4.2rem;
+    }
+
+    .menu-nav {
+        gap: 1rem;
+        font-size: clamp(1.6rem, 10vw, 2.3rem);
+        padding: 1rem 0;
+        width: 90%
+    }
+
+    button > img {
+        width: 4.3rem;
+    }
+
+    .menu-nav > button {
+        grid-template-columns: 5rem 1fr;
+    }
+
+    .menu-nav > button:first-child {
+        grid-template-columns: 1fr 5rem;
+    }
+
+    .menu-nav > button:last-child {
+        gap: 0;
+    }
+
+    .menu-nav > button:first-child > img {
+        height: 6rem;
+    }
+
+    .ball-text {
+        gap: 0;
+        padding-top: 27%;
+        max-width: 40%;
     }
 }
