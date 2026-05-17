@@ -36,23 +36,22 @@ let flowerStorm = function () {
                         ["fairy", "dwarf", "giant", "goliath"]
                     ];
 
-    console.log(window.innerWidth, window.innerHeight);
     if ( window.innerWidth <= 800 ) {
         plantMax = 15;
     } else {
         plantMax = 30;
     }
-    console.log(`plantMax is ${plantMax}`);
 
     for (let n = 0; n < plantMax; n++) {
         let body = document.querySelector("body");
+        let allContent = document.querySelector("#allContent");
 
         let plant = document.createElement("img");
         plant.src = Math.random() > 0.49 ? flowerImage : leafImage;
         plant.classList.add("plant");
 
         function planting() {
-            let maxX = innerWidth;
+            let maxX = window.innerWidth <= 800 ? (allContent.getBoundingClientRect().width) * 0.90 : allContent.getBoundingClientRect().width;
             let maxY = body.scrollHeight * 0.91;
             let x = Math.random() * maxX;
             let y = Math.random() * maxY;
@@ -61,14 +60,25 @@ let flowerStorm = function () {
 
             if (ball !== null) {
                 let ballSpace = ball.getBoundingClientRect();
+                console.log(ballSpace);
 
-                while (x >= ballSpace.left && x <= ballSpace.right) {
-                    x = Math.random() * maxX;
+                let xCheck = function() {
+                    if (x >= ballSpace.left && x <= ballSpace.right && (y >= ballSpace.top && y <= ballSpace.bottom)) {
+                        x = Math.random() * maxX;
+                        xCheck();
+                    }
                 }
 
-                while (y >= ballSpace.top && y <= ballSpace.bottom) {
-                    y = Math.random() * maxY;
+                let yCheck = function() {
+                    if (y >= ballSpace.top && y <= ballSpace.bottom && (x >= ballSpace.left && x <= ballSpace.right)) {
+                        y = Math.random() * maxY;
+                        yCheck();
+                    }
                 }
+
+                xCheck();
+                yCheck();
+                
             }
 
             plant.style = `left: ${x}px; top: ${y}px;`;

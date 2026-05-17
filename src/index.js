@@ -13,7 +13,7 @@ import longFlowerImage from "./assets/img/longFlower.png"
 
 window.addEventListener("load", function() {
     let content = document.querySelector("#content");
-    let contentBacker = document.querySelector("#backer");
+    let allContent = document.querySelector("#allContent");
     flowerStorm();
 
     window.addEventListener("resize", function() {
@@ -23,7 +23,6 @@ window.addEventListener("load", function() {
     })
 
     let title = document.querySelector("#center-title");
-
     let navigationSection = document.querySelector(".main-nav");
 
     let flowerCrown = document.createElement("img");
@@ -53,10 +52,8 @@ window.addEventListener("load", function() {
 
     navigationSection.appendChild(flowerCrown);
     navigationSection.appendChild(flyingFay);
-    contentBacker.appendChild(runningFay);
-    contentBacker.appendChild(lyingFay);
-    // contentBacker.appendChild(longFlower);
-    // contentBacker.appendChild(longFlower2);
+    // allContent.appendChild(runningFay);
+    allContent.appendChild(lyingFay);
 
     let navigation = {
         home: homeDisplay,
@@ -78,7 +75,7 @@ window.addEventListener("load", function() {
             let nonActiveMenuItems = [ ...allMenuButtons ].filter( button => button != event.target );
             nonActiveMenuItems.forEach((item) => item.classList.remove("hidden"));
 
-            content.replaceChildren(longFlower, longFlower2);
+            content.replaceChildren(longFlower, longFlower2, runningFay);
             navigation[`${event.target.id}`](); 
 
             if (event.target.id === "home") {
