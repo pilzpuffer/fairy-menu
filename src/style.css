@@ -324,7 +324,7 @@ button > img {
 }
 
 #lie {
-    bottom: 2%;
+    bottom: 0%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -374,6 +374,10 @@ button > img {
 
 .item + .item {
     margin-top: 1.3rem;
+}
+
+.item:last-child {
+    padding-bottom: 1rem;
 }
 
 .title, .description, .title-category {
@@ -526,9 +530,25 @@ button > img {
     .description {
         padding-top: 1rem;
     } 
+
+    #ball {
+       width: 85%; 
+    }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 550px) {
+    #ball {
+       width: 92%; 
+    }
+
+    .ball-text {
+        gap: 0;
+        padding-top: 27%;
+        max-width: 40%;
+    }
+}
+
+@media screen and (max-width: 441px) {
     .item.title-category + .item {
         margin-top: 4.3rem;
     }
@@ -562,7 +582,7 @@ button > img {
     }
 
     #lie {
-        bottom: 4%;
+        bottom: 1.5%;
     }
 
     #flower {
@@ -599,10 +619,22 @@ button > img {
     .menu-nav > button:first-child > img {
         height: 6rem;
     }
+}
+
+@media screen and (max-width: 418px) {
+    .ball-text {
+        font-size: 2.25rem;
+    }
+}
+
+@media screen and (max-width: 391px) {
+    .ball-text {
+        font-size: 2rem;
+    }
 
     .ball-text {
         gap: 0;
-        padding-top: 27%;
+        padding-top: 30%;
         max-width: 40%;
     }
 }

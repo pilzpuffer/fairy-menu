@@ -60,7 +60,6 @@ let flowerStorm = function () {
 
             if (ball !== null) {
                 let ballSpace = ball.getBoundingClientRect();
-                console.log(ballSpace);
 
                 let xCheck = function() {
                     if (x >= ballSpace.left && x <= ballSpace.right && (y >= ballSpace.top && y <= ballSpace.bottom)) {
