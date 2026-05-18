@@ -34,7 +34,7 @@
     linear-gradient(180deg, #dce7c8 0%, #b8cf9e 50%, #d9cfa8 100%);
     --content-backer: rgb(254, 241, 209);
     --border-color: rgb(160, 162, 122);
-    --font-color: rgb(160, 125, 90);
+    --font-color: rgb(153, 118, 82);
     --darker-font: rgba(82, 57, 32);
 
     --pale-amber: #D3DB7Cff;
@@ -72,6 +72,7 @@ body {
 
     display: flex;
     flex-direction: column;
+    min-width: 330px;
 }
 
 #allContent {
@@ -259,7 +260,7 @@ span {
 
 .menu-nav {
     font-family: "Corinthia";
-    font-size: clamp(2.3rem, 4vw, 3rem); 
+    font-size: clamp(2.3rem, 4vw, 3rem);
     position: relative;
 
     padding: 2rem 0;
@@ -539,6 +540,13 @@ button > img {
     #ball {
        width: 85%; 
     }
+
+    .menu-nav {
+        gap: 1rem;
+        font-size: clamp(1.6rem, 10vw, 2.3rem);
+        padding: 1rem 0;
+        width: 90%
+    }
 }
 
 @media screen and (max-width: 550px) {
@@ -559,6 +567,26 @@ button > img {
 
     .main-nav {
         grid-template-columns: calc(clamp(2.5rem, 4vw, 3.5rem) * 3.75) 0rem calc(clamp(2.5rem, 4vw, 3.5rem) * 3.75);
+    }
+
+    button > img {
+        width: 4.3rem;
+    }
+
+    .menu-nav > button {
+        grid-template-columns: 5rem 1fr;
+    }
+
+    .menu-nav > button:first-child {
+        grid-template-columns: 1fr 5rem;
+    }
+
+    .menu-nav > button:last-child {
+        gap: 0;
+    }
+
+    .menu-nav > button:first-child > img {
+        height: 6rem;
     }
 }
 
@@ -610,33 +638,6 @@ button > img {
     #flower2 {
         width: 4.2rem;
     }
-
-    .menu-nav {
-        gap: 1rem;
-        font-size: clamp(1.6rem, 10vw, 2.3rem);
-        padding: 1rem 0;
-        width: 90%
-    }
-
-    button > img {
-        width: 4.3rem;
-    }
-
-    .menu-nav > button {
-        grid-template-columns: 5rem 1fr;
-    }
-
-    .menu-nav > button:first-child {
-        grid-template-columns: 1fr 5rem;
-    }
-
-    .menu-nav > button:last-child {
-        gap: 0;
-    }
-
-    .menu-nav > button:first-child > img {
-        height: 6rem;
-    }
 }
 
 @media screen and (max-width: 418px) {
@@ -668,5 +669,26 @@ button > img {
     .main-nav > button {
         justify-self: center;
     }
+}
 
+@media screen and (max-width: 376px) {
+    button > img {
+        width: 3.5rem;
+    }
+
+    .menu-nav > button {
+        grid-template-columns: 4rem 1fr;
+    }
+
+    .menu-nav > button:first-child {
+        grid-template-columns: 1fr 4rem;
+    }
+
+    .menu-nav > button:first-child > img {
+        height: 5rem;
+    } 
+
+    .menu-nav > button:last-child {
+        gap: 0.5rem;
+    }
 }
