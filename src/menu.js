@@ -120,7 +120,7 @@ let menuDisplay = function() {
         
         setUpItem("ginNode", "gin", "");
         setUpItem("ginNode", "Fairy Ring", "джин, бузиновий сироп, лаймовий сік, тонік");
-        setUpItem("ginNode", "Wild Hunt", "джин, Parfait Amour, тонік, лаймовий сік");
+        setUpItem("ginNode", "Wild Hunt", "джин, Parfait Amour, блю кюрасао, лаймовий сік");
         
         content.append(wine, rum, gin);
     }

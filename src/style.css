@@ -171,18 +171,22 @@ nav > button {
     display: grid;
     place-items: center;
     padding-top: 3.2rem;
-    grid-template-rows: 6rem 1fr 9rem;
 
     width: 60%;
     margin: auto;
 }
 
 .home-text > div,
-.ritual-text > div {
+.ritual-text > div,
+#fortune {
     font-size: 1.6rem;
     font-family: 'Cormorant Garamond';
     text-align: center;
     z-index: 2;
+}
+
+.home-text {
+    row-gap: 1.2rem;
 }
 
 .ritual-text  {
@@ -190,7 +194,7 @@ nav > button {
 }
 
 #fortune {
-    padding-bottom: 1rem;
+    padding: 1rem 0;
 }
 
 .ball-block {
@@ -206,7 +210,7 @@ nav > button {
     max-width: 30%;
 
     z-index: 3;
-    padding-top: 22%;
+    padding-top: 20%;
 
     transform: scale(0.94);
     animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
@@ -560,7 +564,6 @@ button > img {
 @media screen and (max-width: 441px) {
     .home-text {
         width: 70%;
-        grid-template-rows: 6rem 1fr 12rem;
     }  
     
     .home-text > div:last-child {
