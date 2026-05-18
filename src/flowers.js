@@ -53,8 +53,8 @@ let flowerStorm = function () {
         function planting() {
             let maxX = window.innerWidth <= 800 ? (allContent.getBoundingClientRect().width) * 0.90 : allContent.getBoundingClientRect().width;
             let maxY = body.scrollHeight * 0.91;
-            let x = Math.random() * maxX;
-            let y = Math.random() * maxY;
+            let x;
+            let y;
 
             let ball = document.querySelector("#ball")
 
@@ -62,15 +62,15 @@ let flowerStorm = function () {
                 let ballSpace = ball.getBoundingClientRect();
 
                 let xCheck = function() {
+                    x = Math.random() * maxX;
                     if (x >= ballSpace.left && x <= ballSpace.right && (y >= ballSpace.top && y <= ballSpace.bottom)) {
-                        x = Math.random() * maxX;
                         xCheck();
-                    }
+                    } 
                 }
 
                 let yCheck = function() {
+                    y = Math.random() * maxY
                     if (y >= ballSpace.top && y <= ballSpace.bottom && (x >= ballSpace.left && x <= ballSpace.right)) {
-                        y = Math.random() * maxY;
                         yCheck();
                     }
                 }

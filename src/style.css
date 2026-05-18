@@ -549,6 +549,15 @@ button > img {
 }
 
 @media screen and (max-width: 441px) {
+    .home-text {
+        width: 70%;
+        grid-template-rows: 6rem 1fr 12rem;
+    }  
+    
+    .home-text > div:last-child {
+        place-self: center;
+    }
+
     .item.title-category + .item {
         margin-top: 4.3rem;
     }
@@ -637,4 +646,9 @@ button > img {
         padding-top: 30%;
         max-width: 40%;
     }
+
+    .home-text {
+        width: 80%;
+        grid-template-rows: 6rem 1fr 15rem;
+    }  
 }
