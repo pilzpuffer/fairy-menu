@@ -34,8 +34,8 @@
     linear-gradient(180deg, #dce7c8 0%, #b8cf9e 50%, #d9cfa8 100%);
     --content-backer: rgb(254, 241, 209);
     --border-color: rgb(160, 162, 122);
-    --font-color: rgb(192, 156, 120);
-    --darker-font: rgba(82, 57, 32);;
+    --font-color: rgb(160, 125, 90);
+    --darker-font: rgba(82, 57, 32);
 
     --pale-amber: #D3DB7Cff;
     --dry-sage: #B8CAA4ff;
@@ -219,8 +219,9 @@ nav > button {
     justify-items: center;
     row-gap: 0.5rem;
 
-    font-family: "Cormorant Garamond";
     font-size: 2.5rem;
+    font-family: "Cormorant Garamond";
+    font-weight: bold;
 
     pointer-events: none;
 }
@@ -659,4 +660,13 @@ button > img {
         width: 80%;
         grid-template-rows: 6rem 1fr 15rem;
     }  
+    .main-nav {
+        column-gap: 0;
+        row-gap: 2rem;
+    }
+
+    .main-nav > button {
+        justify-self: center;
+    }
+
 }
