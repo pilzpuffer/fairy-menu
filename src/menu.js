@@ -28,7 +28,7 @@ let menuDisplay = function() {
 
     content.appendChild(menuBlock);
 
-    if ( typeof screen.orientation !== 'undefined' ) {
+    if ( window.innerWidth > 500 ) {
         drinksButton.addEventListener("mouseover", function() {
             drinkImage.classList.add("rotate-forward");
         })
@@ -173,6 +173,21 @@ let menuDisplay = function() {
     let renewMenu = function() {
         content.replaceChildren(menuBlock, run, longFlower, longFlower2);
         menuOptions[`${event.target.id}`]();
+        if (window.innerWidth < 500) {
+            if (event.target.id === "drinks") {
+                drinkImage.classList.toggle("rotate-forward");
+                
+                if (foodImage.classList.contains("rotate-backward")) {
+                    foodImage.classList.toggle("rotate-backward")
+                }
+            } else {
+                foodImage.classList.toggle("rotate-backward");
+                
+                if (drinkImage.classList.contains("rotate-forward")) {
+                    drinkImage.classList.toggle("rotate-forward")
+                }
+            }
+        }
     }
         menuViews.forEach((button) => {
             button.addEventListener("click", function(event) {
