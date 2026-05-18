@@ -541,10 +541,19 @@ button > img {
        width: 92%; 
     }
 
+    #crown {
+        width: 7rem;
+        margin-top: -5rem;
+    }
+
     .ball-text {
         gap: 0;
         padding-top: 27%;
         max-width: 40%;
+    }
+
+    .main-nav {
+        grid-template-columns: calc(clamp(2.5rem, 4vw, 3.5rem) * 3.75) 0rem calc(clamp(2.5rem, 4vw, 3.5rem) * 3.75);
     }
 }
 
@@ -560,10 +569,6 @@ button > img {
 
     .item.title-category + .item {
         margin-top: 4.3rem;
-    }
-
-    .main-nav {
-        grid-template-columns: calc(clamp(2.5rem, 4vw, 3.5rem) * 3.75) 0rem calc(clamp(2.5rem, 4vw, 3.5rem) * 3.75);
     }
 
     #crown {
